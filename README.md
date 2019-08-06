@@ -54,10 +54,10 @@ No authentification should be required.
 
 # 2016 Edition
 
-The first edition of the netdevops survey took place in 2016
-The raw results are available [HERE](https://drive.google.com/open?id=19zpdswVSBI4Eel_vrphB5JwUjZ7MtV0LY6Ifz57tCFE) 
-The draft of the report is available [HERE](https://drive.google.com/open?id=1YLgCIo7DkRmHFog4teITOGmsC7KB7qQKdjkzsW2KlXs)
-
+The first edition of the netdevops survey took place in Fall 2016
+* The raw results are available [HERE](https://drive.google.com/open?id=19zpdswVSBI4Eel_vrphB5JwUjZ7MtV0LY6Ifz57tCFE)   
+* The draft of the report is available [HERE](https://drive.google.com/open?id=1YLgCIo7DkRmHFog4teITOGmsC7KB7qQKdjkzsW2KlXs)  
+ 
 ## Core Team
 - Jason Frazier
 - David Barroso
