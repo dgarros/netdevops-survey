@@ -1,0 +1,268 @@
+
+
+---
+- section: OPERATION/MANAGEMENT OF YOUR NETWORK
+  questions:
+  - title: What operations in your network are currently automated? 
+    type: Multiple choice 
+    responses:
+    - Day 0 Provisioning using a vendor solution (ZTP, POAP, Amnesiac, etc.)
+    - Configuration generation
+    - Configuration deployment
+    - Configuration archiving
+    - Software qualification
+    - Troubleshooting
+    - Software upgrade
+    - Pre/Post Change Checks
+    - Anomaly detection
+    - Data Collection / Reporting
+    - Compliance Checks
+    - Other…
+
+  - title: How are you keeping track of your configuration changes? 
+    type: Multiple choice 
+    responses:
+    - Version control (github, gitlab, svn …)
+    - FTP
+    - Rancid/Oxidized
+    - Vendor specific tools
+    - We are not keeping track of that
+    - Other…
+  
+  - title: Have you automated the decision to deploy a new configuration? (auto-remediation, auto-change-validation)
+    type: Single choice 
+    responses:
+    - Yes
+    - Partially
+    - No
+
+  - title: Do you allow configurations to be manually changed via CLI in addition to automated deployments?
+    type: Single choice 
+    responses:
+    - Yes
+    - No
+
+  - title: Configuration – If you are automating the generation and/or the deployment of your configurations what solution(s) are you using?
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - NAPALM
+    - NetCracker
+    - Tail-F
+    - Custom scripts (python ..)
+    - Controller (ODL, NSX, Opencontrail...)
+    - Vendor specific tools (please indicate which one in "other")
+    - We haven’t automated the generation or deployment of our configurations
+    - Other…
+
+  - title: How often do you make changes in production
+    type: Multiple choice 
+    responses:
+    - Minor changes
+    - Major changes
+    options:
+    - Not sure
+    - Less than 1 per month
+    - 1 to 5 per month
+    - 1 to 5 per week
+    - More than 1 a day
+
+  - title: Troubleshooting - If you are automating the troubleshooting of your network what solution(s) are you using?
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - StackStorm
+    - NAPALM
+    - NetCracker
+    - Tail-F
+    - Custom scripts (python ..)
+    - Vendor specific tools (please indicate which ones in "other")
+    - We haven’t automated the troubleshooting
+    - Other…
+
+  - title: Software Upgrade - If you are automating software upgrades in your network what solution(s) are you using?
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - Custom scripts (python ..)
+    - Vendor specific tools (please indicate which one in "other")
+    - We haven’t automated software upgrades
+    - Other…
+
+  - title: Software Qualification/Validation - If you are automating software qualification for your network what solution(s) are you using?
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - NetCracker
+    - Robot Framework
+    - SaltStack
+    - Tail-F
+    - Custom scripts
+    - Vendor specific tools (please indicate which one in "other")
+    - We haven’t automated software qualification
+    - Other…
+  
+  - title: Anomaly detection – If you have automated the detection of anomaly in your network, what solution(s) are you using? 
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - NAPALM
+    - SaltStack
+    - Syslog
+    - StackStorm
+    - Custom scripts
+    - Vendor specific tools (please indicate which one in "other")
+    - We haven’t automated the detection of anomaly
+    - Other…
+
+# ----------------------------------------------------
+- section: Your Environment
+  questions:
+  - title: How many network devices are you managing?
+    type: Single choice 
+    responses:
+    - 0-50
+    - 51-250
+    - 251-1000
+    - 1001+
+
+  - title: Which networking vendor devices are you managing?
+    type: Multiple choice 
+    responses:
+    - Arista
+    - Big Switch
+    - Brocade
+    - Cisco IOS
+    - Cisco Nexus
+    - Cumulus
+    - Dell/EMC
+    - Juniper
+    - HPE
+    - Huawei
+    - Other…
+
+  - title: What types of environments are you managing?
+    type: Multiple choice 
+    responses:
+    - Datacenter
+    - Campus/User Access
+    - Internet Peering
+    - WAN
+    - SP Backbone
+
+  - title: What programmatic language(s) are you using? 
+    type: Multiple choice grid 
+    responses:
+    - Python
+    - Golang
+    - Javascript
+    - Ruby
+    - C/C++
+    - Shell
+    - Other
+    options:
+    - None
+    - A little
+    - A lot
+
+  - title: Which solution are you using to run virtual network devices for training or qualification purpose?
+    type: Multiple choice 
+    responses:
+    - Vagrant
+    - VMWare
+    - OpenStack
+    - Ravello
+    - Docker or Containers
+    - Non-VMWare hypervisor (KVM, et al.)
+    - GNS3
+    - UNetLab
+    - Homemade solution
+    - Vendor Provided solution (VIRL, Junosphere .. )
+    - We are not using virtual network devices for training or qualification
+    - Other…
+  
+  - title: On the server side, what automation tools are you using ?
+    type: Multiple choice 
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - CF Engine
+    - Vendor Specific
+    - We don't have automation for server
+    - Microsoft SCCM
+    - Other…
+  
+  - title: Where are you located?
+    type: Single choice 
+    responses:
+    - North America
+    - South America
+    - Africa
+    - Europe
+    - Middle East
+    - Asia
+    - Australia, Oceania or Pacific Islands
+    - Other…
+
+# ----------------------------------------------------
+- section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
+  questions:
+  - title: In the following list of topic, which one are you interested about or have currently implemented ?
+    type: Multiple choice grid 
+    responses:
+    - Infrastructure as code
+    - Event Driven Automation
+    - Chatops
+    - Continuous Integration/ Delivery - CI/CD
+    - Devops
+    - Telemetry streaming
+    - Intent based solution
+    options:
+    - I don't know
+    - No interest
+    - Thinking about it
+    - Currently evaluating it
+    - Already in production
+
+  - title: In the following list of tool, which one are you interested about or have currently implemented ?
+    type: Multiple choice grid 
+    responses: 
+    - Ansible
+    - Chef
+    - Puppet
+    - Saltstack
+    - NAPALM
+    - Git (github/gitlab)
+    - Keyword based testing (RobotFramework, Behave)
+    - CI (jenkins, travis-ci, circle-ci, gitlab-ci)
+    - Stackstorm
+    - Apstra AOS
+    - GluWare 
+    - Anuta Networks
+    options:
+    - I don't know
+    - No interest
+    - Thinking about it
+    - Currently evaluating it
+    - Already in production
+
+- section: Feedback
+  questions:
+  - title: Open form for feedback or additional informations you would like to share. (Attention everyone will have access to it)
+    type: Open form
+
