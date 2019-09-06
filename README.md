@@ -5,52 +5,58 @@ There are numerous surveys available that present how Sysadmin and DevOps profes
 
 # Vendor Neutral and Collaborative
 
-This survey has been designed to be vendor neutral and collaborative.
+This survey has been designed to be vendor neutral and collaborative. 
 Everyone is welcome to participate in the definition of the questionnaire and the definition of the report.
 
-Questions and feedback can be provided via Github issue or via the NetworkToCode Slack channel.
+Questions and feedback can be provided via Github issue or via the NetworkToCode Slack channel. 
 You can sign up and join the Slack community here: http://slack.networktocode.com/
 
 # 2019 Edition
 
 ## Agenda
-* August 1st to September 20th : Definition of the questionnaire (github)
+* August 1st to September 27th : Definition of the questionnaire (github)
 * Sept 30th to Oct 27th : Survey open for response
 
-## Todo List
-* 
+## TODO List
+* Define the questionnaire for the 2019 edition
+* Find a solution to raw results
+* Find a solution to create a report
 
 ## Core Team
 * Francois Caen
 * Damien Garros
-* ... 
+* (please reach out if you are interested to help) 
 
 ## Tools Selection and Requirements
 The netdevops survey can be broken down in 4 steps, each with it's own set of requirements
 
 ### Questionnaire definition
-Define the content and the format of the questionnaire for an upcoming survey. 
+Define the content and the format of the questionnaire for an upcoming survey.  
 Define the list of sections, questions and associated responses.
 The definition of the questionnaire aim at beeing as open as possible. Anyone should be able to comment on the existing proposal and should be able to propose some modifications. 
-To be accepted a modification needs to be reviewed and approved by at least one mainteneur
+To be accepted a modification needs to be reviewed and approved by at least one maintaineur
 
 **Proposed solution**: Github 
 
 ### Responses collection
-Web interface to collect the responses to the survey
-The interface should be accessible on both desktop and mobile browser.
+Web interface to collect the responses to the survey.  
+The interface should be accessible on both desktop and mobile browser.  
 No authentification should be required.
 
-**Proposed solution**: TBD 
+**Proposed solution**: Google Form 
 
 ### Raw Results
+Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a googe sheet).
+Ideally as we start to have multiple editions of the survey, it would be interesting to have the results available in a common format/place.
 
-**Proposed solution**: TBD 
+**Proposed solution**: TBD, please join the discussion to help us find the best solution here.
 
 ### Reports
+if possible it would be great to have a solution to:
+- Collaboratively create a report with nice graphics 
+- Distribute and update this report (web UI?)
 
-**Proposed solution**: TBD 
-
+**Proposed solution**: TBD, please join the discussion to help us find the best solution here
 
 # 2016 Edition
 
