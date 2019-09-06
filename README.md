@@ -34,7 +34,7 @@ The netdevops survey can be broken down in 4 steps, each with it's own set of re
 Define the content and the format of the questionnaire for an upcoming survey.  
 Define the list of sections, questions and associated responses.
 The definition of the questionnaire aim at beeing as open as possible. Anyone should be able to comment on the existing proposal and should be able to propose some modifications. 
-To be accepted a modification needs to be reviewed and approved by at least one maintaineur
+To be accepted a modification needs to be reviewed and approved by at least one maintainer
 
 **Proposed solution**: Github 
 
@@ -46,7 +46,7 @@ No authentification should be required.
 **Proposed solution**: Google Form 
 
 ### Raw Results
-Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a googe sheet).
+Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a google sheet).
 Ideally as we start to have multiple editions of the survey, it would be interesting to have the results available in a common format/place.
 
 **Proposed solution**: TBD, please join the discussion to help us find the best solution here.
