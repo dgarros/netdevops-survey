@@ -157,7 +157,7 @@
     - We haven’t automated the detection of anomaly
 
 # ----------------------------------------------------
-- section: Your Environment
+- section: YOUR ENVIRONMENT
   questions:
   - title: How many network devices are you managing?
     type: Single choice 
