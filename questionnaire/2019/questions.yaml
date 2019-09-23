@@ -228,7 +228,7 @@
     - 2 to 5 years 
     - More than 5 years
 
-  - title: What actions did your team took to transition to network automation
+  - title: What actions did your team take to transition to network automation
     type: Multiple Choice 
     responses:
     - Some of us learned on their own
@@ -238,8 +238,8 @@
     - We participated in hackathon
 
   - title: > 
-      If you (personnaly) have transitioned from a network engineer role to a network automation role, 
-      how long did it took you to make the transition 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      how long did it take you to make the transition 
     type: Single Choice 
     responses:
     - Less than 1 year
@@ -248,16 +248,17 @@
     - More than 5 years
   
   - title: > 
-      If you (personnaly) have transitioned from a network engineer role to a network automation role, 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
       How many hours did you put in training / self learning
     type: Single Choice 
     responses:
-    - 100s
-    - 1000s
-    - 5000s
+    - 0-500
+    - 500-2000
+    - 2000-5000
+    - More than 5000
 
   - title: > 
-      If you (personnaly) have transitioned from a network engineer role to a network automation role, 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
       How did you managed to find time for this transition
     type: Multiple Choice 
     responses:
