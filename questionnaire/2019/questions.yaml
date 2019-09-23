@@ -239,8 +239,9 @@
     - CF Engine
     - RunDeck
     - Vendor Specific
-    - We don't have automation for server
     - Microsoft SCCM
+    - We don't have automation for server
+    - Other (text field)
   
   - title: Where are you located?
     type: Single choice 
@@ -266,6 +267,7 @@
     - Devops
     - Telemetry streaming
     - Intent based solution
+    - Source of Truth
     options:
     - I don't know
     - No interest
@@ -283,6 +285,10 @@
     - NAPALM
     - Nornir
     - Netbox
+    - Elastiflow
+    - ELK (Logstash/Kibana)
+    - Grafana/Prometheus/Influxdb
+    - Kentik
     - Cisco NSO (tail-F)
     - Git (github/gitlab)
     - Keyword based testing (RobotFramework, Behave)
