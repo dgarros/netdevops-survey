@@ -138,7 +138,10 @@
     - 0-50
     - 51-250
     - 251-1000
-    - 1001+
+    - 1001-5000
+    - 5000-10000
+    - 10000-50000
+    - 50000+
 
   - title: Which networking vendor devices are you managing?
     type: Multiple choice 
@@ -163,6 +166,10 @@
     - Internet Peering
     - WAN
     - SP Backbone
+    - AWS Public Cloud
+    - Google Public Cloud
+    - Azure Public Cloud
+    - Other Public Cloud 
 
   - title: What programmatic language(s) are you using? 
     type: Multiple choice grid 
@@ -172,6 +179,7 @@
     - Javascript
     - Ruby
     - C/C++
+    - Expect
     - Shell
     - Other
     options:
@@ -228,7 +236,7 @@
     - Chatops
     - Continuous Integration/ Delivery - CI/CD
     - Devops
-    - Telemetry streaming
+    - Streaming Telemetry
     - Intent based solution
     options:
     - I don't know
