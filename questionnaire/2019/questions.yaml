@@ -250,6 +250,57 @@
     - Australia, Oceania or Pacific Islands
 
 # ----------------------------------------------------
+- section: TRANSITION TO NETWORK AUTOMATION
+  questions:
+  - title: For how long have you been leveraging automation in your network in a significant way
+    type: Single choice 
+    responses:
+    - Less than 1 year
+    - 1 to 2 years
+    - 2 to 5 years 
+    - More than 5 years
+
+  - title: What actions did your team take to transition to network automation
+    type: Multiple Choice 
+    responses:
+    - Some of us learned on their own
+    - Some of us took some network automation / programming training
+    - We engaged a consulting firm to help get started
+    - We hired dedicated Network Automation Engineer(s)
+    - We participated in hackathon
+    - Other (text field)
+
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      how long did it take you to make the transition 
+    type: Single Choice 
+    responses:
+    - Less than 1 year
+    - 1 to 2 years
+    - 2 to 5 years 
+    - More than 5 years
+  
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      How many hours did you put in training / self learning
+    type: Single Choice 
+    responses:
+    - 0-200
+    - 201-1000
+    - 1001-4000
+    - More than 4000
+
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      How did you managed to find time for this transition
+    type: Multiple Choice 
+    responses:
+    - Learned on my own time
+    - Dedicated some time per week at work
+    - Went in formal training 
+    - Transition into the new role 100% and learned on the job
+
+# ----------------------------------------------------
 - section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
   questions:
   - title: In the following list of topic, which one are you interested about or have currently implemented ?
