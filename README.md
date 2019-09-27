@@ -14,8 +14,8 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 # 2019 Edition
 
 ## Agenda
-* August 1st to September 27th : Definition of the questionnaire (github)
-* Sept 30th to Oct 27th : Survey open for response
+* August 1st to Oct 4th : Definition of the questionnaire (github)
+* Oct 8th to Nov 10th : Survey open for response
 
 ## TODO List
 * Define the questionnaire for the 2019 edition
