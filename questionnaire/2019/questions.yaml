@@ -220,7 +220,7 @@
 # ----------------------------------------------------
 - section: TRANSITION TO NETWORK AUTOMATION
   questions:
-  - title: For how long have you been leveraging automation in your network
+  - title: For how long have you been leveraging automation in your network in a significant way
     type: Single choice 
     responses:
     - Less than 1 year
@@ -234,8 +234,9 @@
     - Some of us learned on their own
     - Some of us took some network automation / programming training
     - We engaged a consulting firm to help get started
-    - We hired a dedicated Network Automation Engineer
+    - We hired dedicated Network Automation Engineer(s)
     - We participated in hackathon
+    - Other (text field)
 
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
@@ -252,10 +253,10 @@
       How many hours did you put in training / self learning
     type: Single Choice 
     responses:
-    - 0-500
-    - 500-2000
-    - 2000-5000
-    - More than 5000
+    - 0-200
+    - 201-1000
+    - 1001-4000
+    - More than 4000
 
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
