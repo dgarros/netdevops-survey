@@ -25,15 +25,23 @@
     - Anomaly detection
     - Data Collection / Reporting
     - Compliance Checks
+    - Topology Mapping
 
   - title: How are you keeping track of your configuration changes? 
     type: Multiple choice 
     responses:
     - Version control (github, gitlab, svn …)
-    - FTP
+    - FTP/SCP/TFTP
     - Rancid/Oxidized
     - Vendor specific tools
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Solarwind NCM
+    - HPE Network Automation (HP NA)
+    - Microsoft Excel
+    - Kiwi CatTools
     - We are not keeping track of that
+    - Other (text field)
   
   - title: Have you automated the decision to deploy a new configuration? (auto-remediation, auto-change-validation)
     type: Single choice 
@@ -55,13 +63,16 @@
     - Chef
     - Puppet
     - SaltStack
+    - NSO (Tail-F)
+    - Nornir
     - NAPALM
-    - NetCracker
-    - Tail-F
-    - Custom scripts (python ..)
+    - HPE Network Automation (HP NA)
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
     - Controller (ODL, NSX, Opencontrail...)
-    - Vendor specific tools (please indicate which one in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the generation or deployment of our configurations
+    - Other (text field)
 
   - title: How often do you make changes in production
     type: Multiple choice 
@@ -84,11 +95,14 @@
     - SaltStack
     - StackStorm
     - NAPALM
-    - NetCracker
-    - Tail-F
-    - Custom scripts (python ..)
-    - Vendor specific tools (please indicate which ones in "other")
+    - Nornir
+    - Solarwind NCM
+    - NSO (Tail-F)
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the troubleshooting
+    - Other (text field)
 
   - title: Software Upgrade - If you are automating software upgrades in your network what solution(s) are you using?
     type: Multiple choice 
@@ -97,9 +111,13 @@
     - Chef
     - Puppet
     - SaltStack
-    - Custom scripts (python ..)
-    - Vendor specific tools (please indicate which one in "other")
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Solarwind NCM
+    - HPE Network Automation (HP NA)
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated software upgrades
+    - Other (text field)
 
   - title: Software Qualification/Validation - If you are automating software qualification for your network what solution(s) are you using?
     type: Multiple choice 
@@ -107,14 +125,15 @@
     - Ansible
     - Chef
     - Puppet
-    - NetCracker
-    - Robot Framework
+    - Robot Framework / Behave
     - SaltStack
-    - Tail-F
-    - Custom scripts
-    - Vendor specific tools (please indicate which one in "other")
+    - NSO (Tail-F)
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated software qualification
-  
+    - Other (text field)
+
   - title: Anomaly detection – If you have automated the detection of anomaly in your network, what solution(s) are you using? 
     type: Multiple choice 
     responses:
@@ -122,15 +141,18 @@
     - Chef
     - Puppet
     - NAPALM
+    - nornir
     - SaltStack
     - Syslog
     - StackStorm
     - Custom scripts
-    - Vendor specific tools (please indicate which one in "other")
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the detection of anomaly
 
 # ----------------------------------------------------
-- section: Your Environment
+- section: YOUR ENVIRONMENT
   questions:
   - title: How many network devices are you managing?
     type: Single choice 
@@ -138,7 +160,8 @@
     - 0-50
     - 51-250
     - 251-1000
-    - 1001+
+    - 1001-10000
+    - 10001+
 
   - title: Which networking vendor devices are you managing?
     type: Multiple choice 
@@ -162,7 +185,8 @@
     - Campus/User Access
     - Internet Peering
     - WAN
-    - SP Backbone
+    - Service Provider / Edge
+    - Public Cloud
 
   - title: What programmatic language(s) are you using? 
     type: Multiple choice grid 
@@ -173,6 +197,8 @@
     - Ruby
     - C/C++
     - Shell
+    - Powershell
+    - Bash
     - Other
     options:
     - None
@@ -186,14 +212,18 @@
     - VMWare
     - OpenStack
     - Ravello
-    - Docker or Containers
+    - vrnetlab
+    - Tesuto
+    - Docker Compose
+    - Kubernetes
     - Non-VMWare hypervisor (KVM, et al.)
     - GNS3
     - UNetLab
     - Homemade solution
-    - Vendor Provided solution (VIRL, Junosphere .. )
+    - Vendor provided solution (VIRL, Junosphere .. )
     - We are not using virtual network devices for training or qualification
-  
+    - Other (text field)
+
   - title: On the server side, what automation tools are you using ?
     type: Multiple choice 
     responses:
@@ -202,9 +232,11 @@
     - Puppet
     - SaltStack
     - CF Engine
+    - RunDeck
     - Vendor Specific
-    - We don't have automation for server
     - Microsoft SCCM
+    - We don't have automation for server
+    - Other (text field)
   
   - title: Where are you located?
     type: Single choice 
@@ -230,6 +262,8 @@
     - Devops
     - Telemetry streaming
     - Intent based solution
+    - Source of Truth
+    - Graph Database
     options:
     - I don't know
     - No interest
@@ -245,13 +279,18 @@
     - Puppet
     - Saltstack
     - NAPALM
+    - Nornir
+    - Netbox
+
+    - ELK (Logstash/Kibana)
+    - Grafana/Prometheus/Influxdb
+    - Kentik
+    - NSO (tail-F)
     - Git (github/gitlab)
+    - Network Verification Software (Batfish, Forward Networks, Veriflow ..)
     - Keyword based testing (RobotFramework, Behave)
     - CI (jenkins, travis-ci, circle-ci, gitlab-ci)
     - Stackstorm
-    - Apstra AOS
-    - GluWare 
-    - Anuta Networks
     options:
     - I don't know
     - No interest
