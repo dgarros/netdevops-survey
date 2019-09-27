@@ -70,10 +70,7 @@
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
     - Controller (ODL, NSX, Opencontrail...)
-    - Arista Cloud Vision
-    - Cisco Prime
-    - Junos Space
-    - Vendor specific tools (please indicate which one in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the generation or deployment of our configurations
     - Other (text field)
 
@@ -100,10 +97,10 @@
     - NAPALM
     - Nornir
     - Solarwind NCM
-    - Cisco NSO (Tail-F)
+    - NSO (Tail-F)
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
-    - Vendor specific tools (please indicate which ones in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the troubleshooting
     - Other (text field)
 
@@ -117,10 +114,8 @@
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
     - Solarwind NCM
-    - Junos Space
-    - Arista Cloud Vision
     - HPE Network Automation (HP NA)
-    - Vendor specific tools (please indicate which one in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated software upgrades
     - Other (text field)
 
@@ -132,10 +127,10 @@
     - Puppet
     - Robot Framework / Behave
     - SaltStack
-    - Cisco NSO (Tail-F)
+    - NSO (Tail-F)
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
-    - Vendor specific tools (please indicate which one in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated software qualification
     - Other (text field)
 
@@ -153,7 +148,7 @@
     - Custom scripts
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
-    - Vendor specific tools (please indicate which one in "other")
+    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
     - We haven’t automated the detection of anomaly
 
 # ----------------------------------------------------
@@ -225,7 +220,7 @@
     - GNS3
     - UNetLab
     - Homemade solution
-    - Vendor Provided solution (VIRL, Junosphere .. )
+    - Vendor provided solution (VIRL, Junosphere .. )
     - We are not using virtual network devices for training or qualification
     - Other (text field)
 
@@ -286,12 +281,13 @@
     - NAPALM
     - Nornir
     - Netbox
-    - Elastiflow
+
     - ELK (Logstash/Kibana)
     - Grafana/Prometheus/Influxdb
     - Kentik
-    - Cisco NSO (tail-F)
+    - NSO (tail-F)
     - Git (github/gitlab)
+    - Network Verification Software (Batfish, Forward Networks, Veriflow ..)
     - Keyword based testing (RobotFramework, Behave)
     - CI (jenkins, travis-ci, circle-ci, gitlab-ci)
     - Stackstorm
