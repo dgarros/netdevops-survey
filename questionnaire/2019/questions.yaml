@@ -272,7 +272,7 @@
 
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
-      how long did it take you to make the transition 
+      how long did it take you to make the transition? 
     type: Single Choice 
     responses:
     - Less than 1 year
@@ -282,7 +282,7 @@
   
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
-      How many hours did you put in training / self learning
+      How many hours did you put in training / self-learning?
     type: Single Choice 
     responses:
     - 0-200
@@ -292,7 +292,7 @@
 
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
-      How did you managed to find time for this transition
+      How did you managed to find time for this transition?
     type: Multiple Choice 
     responses:
     - Learned on my own time
@@ -303,7 +303,7 @@
 # ----------------------------------------------------
 - section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
   questions:
-  - title: In the following list of topic, which one are you interested about or have currently implemented ?
+  - title: In the following list of topics, which one are you interested about or have currently implemented?
     type: Multiple choice grid 
     responses:
     - Infrastructure as code
@@ -322,7 +322,7 @@
     - Currently evaluating it
     - Already in production
 
-  - title: In the following list of tool, which one are you interested about or have currently implemented ?
+  - title: In the following list of tools, which one are you interested about or have currently implemented?
     type: Multiple choice grid 
     responses: 
     - Ansible
@@ -351,6 +351,6 @@
 
 - section: Feedback
   questions:
-  - title: Open form for feedback or additional informations you would like to share. (Attention everyone will have access to it)
+  - title: Open form for feedback or additional information you would like to share. (Attention everyone will have access to it)
     type: Open form
 
