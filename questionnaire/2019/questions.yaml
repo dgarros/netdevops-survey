@@ -165,22 +165,29 @@
     - 0-50
     - 51-250
     - 251-1000
-    - 1001-10000
-    - 10001+
+    - 1001-5000
+    - 5001-10000
+    - 10001-50000
+    - 50001+
 
   - title: Which networking vendor devices are you managing?
     type: Multiple choice 
     responses:
     - Arista
     - Big Switch
-    - Brocade
-    - Cisco IOS
-    - Cisco Nexus
+    - Extreme Networks (brocade)
+    - Cisco IOS/IOS XE
+    - Cisco NX-OS/ACI
+    - Cisco IOS XR
     - Cumulus
     - Dell/EMC
     - Juniper
     - HPE
     - Huawei
+    - VMWare
+    - Google GCP
+    - Amazon AWS
+    - Microsoft Azure
     - Other…
 
   - title: What types of environments are you managing?
@@ -202,6 +209,7 @@
     - Ruby
     - C/C++
     - Shell
+    - Expect
     - Powershell
     - Bash
     - Other
@@ -316,7 +324,7 @@
     - Chatops
     - Continuous Integration/ Delivery - CI/CD
     - Devops
-    - Telemetry streaming
+    - Streaming Telemetry
     - Intent based solution
     - Source of Truth
     - Graph Database
@@ -337,7 +345,6 @@
     - NAPALM
     - Nornir
     - Netbox
-
     - ELK (Logstash/Kibana)
     - Grafana/Prometheus/Influxdb
     - Kentik
