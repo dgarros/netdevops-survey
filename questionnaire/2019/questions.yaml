@@ -134,21 +134,26 @@
     - We haven’t automated software qualification
     - Other (text field)
 
-  - title: Anomaly detection – If you have automated the detection of anomaly in your network, what solution(s) are you using? 
+  - title: Anomaly detection – what data sources are you using to detect problems in your network ? 
     type: Multiple choice 
     responses:
-    - Ansible
-    - Chef
-    - Puppet
-    - NAPALM
-    - nornir
-    - SaltStack
+    - ICMP/PING
+    - Other active probes (IP SLA/RPM)
+    - External probes (pingmesh)
+    - SNMP
     - Syslog
-    - StackStorm
-    - Custom scripts
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
-    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
+    - sFlow/Netflow
+    - Routing Information
+    - API
+    - Streaming Telemetry
+
+  - title: Anomaly detection – What mechanism are you using to identify problems in your network ? 
+    type: Multiple choice
+    responses:
+    - Up/Down/Threshold alert
+    - Events correlation / rule engine
+    - Events correlation using AI/ML
+    - Proactive monitoring data analysis using AI/ML
     - We haven’t automated the detection of anomaly
 
 # ----------------------------------------------------
