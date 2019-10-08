@@ -86,24 +86,6 @@
     - 1 to 5 per week
     - More than 1 a day
 
-  - title: Troubleshooting - If you are automating the troubleshooting of your network what solution(s) are you using?
-    type: Multiple choice 
-    responses:
-    - Ansible
-    - Chef
-    - Puppet
-    - SaltStack
-    - StackStorm
-    - NAPALM
-    - Nornir
-    - Solarwind NCM
-    - NSO (Tail-F)
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
-    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
-    - We haven’t automated the troubleshooting
-    - Other (text field)
-
   - title: Software Upgrade - If you are automating software upgrades in your network what solution(s) are you using?
     type: Multiple choice 
     responses:
