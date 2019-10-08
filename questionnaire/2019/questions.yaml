@@ -162,6 +162,14 @@
     - 251-1000
     - 1001-10000
     - 10001+
+  
+  - title: In what capacity do you manage these devices?
+    type: Multiple Choice
+    responses:
+    - Single Organization (SMB, Large Enterprise, Service Provider, etc.)
+    - Consultant automating repetitive consulting tasks across multiple client organizations on a per engagement basis
+    - Consultant assisting organizations to develop implement network automation
+    - Managing multiple organization networks (i.e. MSP)
 
   - title: Which networking vendor devices are you managing?
     type: Multiple choice 
