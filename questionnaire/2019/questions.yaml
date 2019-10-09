@@ -244,6 +244,14 @@
     - Asia
     - Australia, Oceania or Pacific Islands
 
+  - title: What is your organization’s prefered approach for network automation tools to manage the production environment ?
+    type: Single choice 
+    responses:
+    - buy 
+    - build internally
+    - use open source / no support
+    - no prefered approach, varies on case by case
+
 # ----------------------------------------------------
 - section: TRANSITION TO NETWORK AUTOMATION
   questions:
