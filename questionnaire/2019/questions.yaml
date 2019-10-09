@@ -250,7 +250,8 @@
     responses:
     - buy 
     - build internally
-    - use open source / no support
+    - use open source without support
+    - use open source with support
     - no prefered approach, varies on case by case
 
 # ----------------------------------------------------
