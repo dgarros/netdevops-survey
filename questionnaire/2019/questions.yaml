@@ -2,7 +2,7 @@
 
 ---
 # ------------------------------------------------------------------------------
-# WORK IN PROGRESS until Sept 27th
+# WORK IN PROGRESS until Oct 9th
 # - Please open an issue on Github or join the conversation on Slack if you would 
 # like to propose a change in the list of questions
 # 
@@ -60,6 +60,7 @@
   - title: Configuration – If you are automating the generation and/or the deployment of your configurations what solution(s) are you using?
     type: Multiple choice 
     responses:
+    - Excel macros
     - Ansible
     - Chef
     - Puppet
@@ -70,8 +71,8 @@
     - HPE Network Automation (HP NA)
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
-    - Controller (ODL, NSX, Opencontrail...)
-    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
+    - Controller (ODL, DNAC, NSX, OpenContrail...)
+    - Network vendor specific tools (CVP, Space, PI ...)
     - We haven’t automated the generation or deployment of our configurations
     - Other (text field)
 
@@ -98,7 +99,7 @@
     - Custom scripts using common libraries (netmiko/napalm)
     - Solarwind NCM
     - HPE Network Automation (HP NA)
-    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
+    - Network vendor specific tools (DNAC, CVP, Space, PI ...)
     - We haven’t automated software upgrades
     - Other (text field)
 
@@ -113,7 +114,7 @@
     - NSO (Tail-F)
     - Low level custom scripts (Python paramiko/socket)
     - Custom scripts using common libraries (netmiko/napalm)
-    - Network vendor specific tools (DNAC, CVP, Space, Prime ...)
+    - Network vendor specific tools (DNAC, CVP, Space, PI ...)
     - We haven’t automated software qualification
     - Other (text field)
 
@@ -191,10 +192,9 @@
     - Javascript
     - Ruby
     - C/C++
-    - Shell
+    - Shell (Bash,...)
     - Expect
     - Powershell
-    - Bash
     - Other
     options:
     - None
@@ -231,7 +231,7 @@
     - RunDeck
     - Vendor Specific
     - Microsoft SCCM
-    - We don't have automation for server
+    - We don't have automation for servers
     - Other (text field)
   
   - title: Where are you located?
@@ -271,7 +271,7 @@
     - Some of us took some network automation / programming training
     - We engaged a consulting firm to help get started
     - We hired dedicated Network Automation Engineer(s)
-    - We participated in hackathon
+    - We participated in hackathon(s)
     - Other (text field)
 
   - title: > 
@@ -296,27 +296,27 @@
 
   - title: > 
       If you (personally) have transitioned from a network engineer role to a network automation role, 
-      How did you managed to find time for this transition?
+      How did you manage to find time for this transition?
     type: Multiple Choice 
     responses:
     - Learned on my own time
     - Dedicated some time per week at work
-    - Went in formal training 
-    - Transition into the new role 100% and learned on the job
+    - Attended formal training 
+    - Transitioned into the new role full-time and learned on the job
 
 # ----------------------------------------------------
 - section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
   questions:
-  - title: In the following list of topics, which one are you interested about or have currently implemented?
+  - title: Which of the following concepts are you interested in or have currently implemented?
     type: Multiple choice grid 
     responses:
-    - Infrastructure as code
+    - Infrastructure As Code
     - Event Driven Automation
     - Chatops
     - Continuous Integration/ Delivery - CI/CD
-    - Devops
+    - DevOps
     - Streaming Telemetry
-    - Intent based solution
+    - Intent-based solution / IBN
     - Source of Truth
     - Graph Database
     - Network Health Monitoring
@@ -327,7 +327,7 @@
     - Currently evaluating it
     - Already in production
 
-  - title: In the following list of tools, which one are you interested about or have currently implemented?
+  - title: Which of the following tools are you interested in or have currently implemented?
     type: Multiple choice grid 
     responses: 
     - Ansible
