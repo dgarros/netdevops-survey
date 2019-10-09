@@ -1,7 +1,7 @@
 
 This repository is the home of the Netdevops survey, The goal of this survey is to collect information to understand how network operators and engineers are using automation to operate their network today. 
 
-There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, little is known about the state of “network operations through automation”. This 2nd edition of the Netdevops survey seeks to address that gap.
+There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, little is known about the state of “network operations through automation”. This 2nd edition of the Netdevops survey seeks to address that gap, and gather a 2019 snapshot.
 
 # Vendor Neutral and Collaborative
 
