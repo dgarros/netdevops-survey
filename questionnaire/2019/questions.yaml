@@ -244,7 +244,7 @@
     - Asia
     - Australia, Oceania or Pacific Islands
 
-  - title: What is your organization’s prefered approach for network automation tools to manage the production environment ?
+  - title: What is your organization’s preferred approach for network automation tools used in the production environment ?
     type: Single choice 
     responses:
     - buy 
