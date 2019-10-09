@@ -215,6 +215,7 @@
     - Non-VMWare hypervisor (KVM, et al.)
     - GNS3
     - UNetLab
+    - EVE-NG
     - Homemade solution
     - Vendor provided solution (VIRL, Junosphere .. )
     - We are not using virtual network devices for training or qualification
