@@ -21,6 +21,7 @@
     - Software qualification
     - Troubleshooting
     - Software upgrade
+    - Fault Remediation
     - Pre/Post Change Checks
     - Anomaly detection
     - Data Collection / Reporting
@@ -310,6 +311,7 @@
     - Intent based solution
     - Source of Truth
     - Graph Database
+    - Network Health Monitoring
     options:
     - I don't know
     - No interest
