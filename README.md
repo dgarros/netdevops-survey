@@ -1,7 +1,7 @@
 
 This repository is the home of the Netdevops survey, The goal of this survey is to collect information to understand how network operators and engineers are using automation to operate their network today. 
 
-There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers, but none provide an overview of the state of “network operations through automation” as of today.
+There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, little is known about the state of “network operations through automation”. This 2nd edition of the Netdevops survey seeks to address that gap.
 
 # Vendor Neutral and Collaborative
 
@@ -14,8 +14,8 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 # 2019 Edition
 
 ## Agenda
-* August 1st to Oct 4th : Definition of the questionnaire (github)
-* Oct 8th to Nov 10th : Survey open for response
+* August 1st to Oct 9th : Definition of the questionnaire (github)
+* Oct 10th to Nov 10th : Survey open for response
 
 ## TODO List
 * Define the questionnaire for the 2019 edition
@@ -46,7 +46,7 @@ No authentification should be required.
 **Proposed solution**: Google Form 
 
 ### Raw Results
-Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a google sheet).
+Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a Google Sheet).
 Ideally as we start to have multiple editions of the survey, it would be interesting to have the results available in a common format/place.
 
 **Proposed solution**: TBD, please join the discussion to help us find the best solution here.
