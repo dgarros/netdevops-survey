@@ -13,13 +13,14 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 
 # 2019 Edition
 
+The 2019 Edition is live : http://bit.ly/netdevops-survey-2019
+
 ## Agenda
 * August 1st to Oct 9th : Definition of the questionnaire (github)
 * Oct 10th to Nov 10th : Survey open for response
 
 ## TODO List
-* Define the questionnaire for the 2019 edition
-* Find a solution to raw results
+* Find a solution to store raw results
 * Find a solution to create a report
 
 ## Core Team
@@ -62,7 +63,7 @@ if possible it would be great to have a solution to:
 
 The first edition of the netdevops survey took place in Fall 2016
 * The raw results are available [HERE](https://drive.google.com/open?id=19zpdswVSBI4Eel_vrphB5JwUjZ7MtV0LY6Ifz57tCFE)   
-* The draft of the report is available [HERE](https://drive.google.com/open?id=1YLgCIo7DkRmHFog4teITOGmsC7KB7qQKdjkzsW2KlXs)  
+* The draft of the report is available [HERE](https://drive.google.com/open?id=1YLgCIo7DkRmHFog4teITOGmsC7KB7qQKdjkzsW2KlXs) 
  
 ## Core Team
 - Jason Frazier
