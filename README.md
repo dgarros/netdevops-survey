@@ -13,11 +13,14 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 
 # 2019 Edition
 
-The 2019 Edition is live : http://bit.ly/netdevops-survey-2019
+The 2019 Edition is now closed, the raw results are available here : http://bit.ly/netdevops-survey-2019-responses
+
+> Google also has a simple interface to explore the results : https://docs.google.com/forms/d/1lF6ZGDdiNn-HEo5WIJYiY9zU3TedNqf2thQX_mwj9Rg/viewanalytics
 
 ## Agenda
 * August 1st to Oct 9th : Definition of the questionnaire (github)
 * Oct 10th to Nov 10th : Survey open for response
+* Nov 11th to Nov 25th : Cleaning results
 
 ## TODO List
 * Find a solution to store raw results
@@ -50,7 +53,7 @@ No authentification should be required.
 Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a Google Sheet).
 Ideally as we start to have multiple editions of the survey, it would be interesting to have the results available in a common format/place.
 
-**Proposed solution**: TBD, please join the discussion to help us find the best solution here.
+**Proposed solution**: Google Spreadsheet
 
 ### Reports
 if possible it would be great to have a solution to:
