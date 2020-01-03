@@ -382,7 +382,7 @@
 
 - section: Feedback
   questions:
-  - title: Open form for feedback or additional information you would like to share. (Reminder: all responses will be made public)
+  - title: "Open form for feedback or additional information you would like to share. (Reminder: all responses will be made public)"
     type: Open form
     id: feedback
 
