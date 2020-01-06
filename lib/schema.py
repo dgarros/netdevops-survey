@@ -17,7 +17,6 @@ import sys
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from sqlalchemy import create_engine
 
 Base = declarative_base()
 
@@ -28,8 +27,13 @@ question_choices = Table(
     Column("choice_id", Integer, ForeignKey("choices.id")),
 )
 
-
 class Surveys(Base):
+    """
+    Collection of Survey.
+    A Survey represent a specific questionnaire that was open for responses during for a limited time
+    2016 Edition is a survey, as well as 2019 edition
+    """
+
     __tablename__ = "surveys"
 
     id = Column(String(50), primary_key=True)
@@ -40,6 +44,18 @@ class Surveys(Base):
 
 
 class Questions(Base):
+    """
+    Collection of Question.
+    A Question represent a specific question that can be part of multiple survey.
+    A Question is implemented in a specific Survey as a SurveyQuestions
+    A Question can be of Type:
+      - Single choice
+      - Multiple choice
+      - Multiple choice grid 
+    Since a `Multiple choice grid` is a group of single choice question, 
+    it's possible for Questions to be related to eachother in a parent/child relationship
+    """
+
     __tablename__ = "questions"
 
     id = Column(String(50), primary_key=True)
@@ -57,6 +73,14 @@ class Questions(Base):
 
 
 class SurveyQuestions(Base):
+    """
+    Collection of SurveyQuestion.
+    A SurveyQuestion is the implementation of a specific question in a Survey. 
+    The Role of a SurveyQuestion is to track, the specificty of a question in each survey.
+    The title of 2 SurveyQuestions can be different between 2 differents surveys
+    The responses associated with a question can be different too between 2 differents surveys
+    """
+
     __tablename__ = "survey_questions"
 
     id = Column(Integer, primary_key=True)
@@ -78,6 +102,11 @@ class SurveyQuestions(Base):
 
 
 class Choices(Base):
+    """
+    Collection of Choices
+    A choice is a simple text field that can be used either in a SurveyQuestion or a QuestionResponses
+    """
+
     __tablename__ = "choices"
 
     id = Column(Integer, primary_key=True)
@@ -92,14 +121,22 @@ class Choices(Base):
 
 
 class SurveyResponses(Base):
+    """
+    Collection of SurveyResponses
+    A SurveyResponse track all the responses of a single individual
+    """
+
     __tablename__ = "survey_responses"
 
     id = Column(String(50), primary_key=True)
-    # entry_date = Column(DateTime, nullable=True)
-    # feedback = Column(String(500), nullable=True)
 
 
 class QuestionResponses(Base):
+    """
+    Collection of QuestionResponses
+    A QuestionResponse track the responses to specific surveyquestion by a given surveyresponse (person)
+    """
+
     __tablename__ = "question_responses"
 
     id = Column(Integer, primary_key=True)
