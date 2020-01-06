@@ -23,35 +23,12 @@ import math
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-from schema import *
+import sys
+
+sys.path.append("../")
+from lib.schema import *
 
 __author__ = "Damien Garros <dgarros@gmail.com>"
-
-questions_pending_cleaning = {
-    "2016": [
-        "env-vendors",
-        "env-type",
-        "env-virtual-network",
-        "env-server-automation",
-        "env-location",
-        "operation-automated",
-        "config-track-changes",
-        "config-gen-deploy",
-        "troubleshoot",
-        "software-upgrade",
-        "software-validation",
-        "anomaly-detection",
-    ],
-    "2019": [
-        "env-vendors",
-        "env-virtual-network",
-        "env-server-automation",
-        "operation-automated",
-        "software-validation",
-        "anomaly-detection-sources",
-        "anomaly-detection-signal",
-    ],
-}
 
 
 def load_question(survey_id, engine):
@@ -220,14 +197,7 @@ def load_responses(survey_id, engine):
         exit(1)
 
     df = pd.read_csv(result_file, sep="\t", header=0)
-
-    # Build list of questions to import based on questions_pending_cleaning
-    if survey_id in questions_pending_cleaning:
-        question_to_exclude = questions_pending_cleaning[survey_id]
-    else:
-        question_to_exclude = []
-
-    question_to_exclude.extend(["Timestamp", "feedback"])
+    question_to_exclude = ["Timestamp", "feedback"]
 
     questions_list = [q for q in list(df.columns) if q not in question_to_exclude]
 
@@ -308,7 +278,7 @@ def load_responses(survey_id, engine):
 def main():
 
     my_parser = argparse.ArgumentParser()
-    my_parser.add_argument("--survey", action="store", type=int, required=True)
+    my_parser.add_argument("--survey", action="store", type=int)
     my_parser.add_argument("--load-question", action="store_true")
     my_parser.add_argument("--load-response", action="store_true")
     my_parser.add_argument("--init", action="store_true")
@@ -316,6 +286,8 @@ def main():
     my_parser.add_argument(
         "--db", action="store", type=str, default="../results/netdevops_survey.sqlite3"
     )
+
+    surveys = [2016, 2019]
 
     args = my_parser.parse_args()
 
@@ -328,14 +300,19 @@ def main():
     Base.metadata.bind = engine
     Session = sessionmaker(bind=engine)
 
+    if args.survey:
+        surveys = [args.survey]
+
     if args.init:
         Base.metadata.create_all(engine)
 
     if args.load_question:
-        load_question(survey_id=args.survey, engine=engine)
+        for survey in surveys:
+            load_question(survey_id=survey, engine=engine)
 
     if args.load_response:
-        load_responses(survey_id=args.survey, engine=engine)
+        for survey in surveys:
+            load_responses(survey_id=survey, engine=engine)
 
 
 if __name__ == "__main__":
