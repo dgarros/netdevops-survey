@@ -48,7 +48,7 @@ class Questions(Base):
     parent = relationship("Questions")
 
     def __repr__(self):
-        if parent_id:
+        if self.parent_id:
             return f"Question [{self.parent_id}] -> {self.id}"
         else:
             return f"Question {self.id}"
@@ -73,7 +73,6 @@ class SurveyQuestions(Base):
 
     def __repr__(self):
         return f"SurveyQuestion '{self.survey_id}::{self.question_id}''"
-
 
 
 class Choices(Base):
