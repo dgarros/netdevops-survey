@@ -30,8 +30,8 @@ question_choices = Table(
 class Surveys(Base):
     """
     Collection of Survey.
-    A Survey represent a specific questionnaire that was open for responses during for a limited time
-    2016 Edition is a survey, as well as 2019 edition
+    A Survey represent a specific questionnaire that was open for response during for a limited time
+    2016 Edition is a survey, as well as the 2019 Edition
     """
 
     __tablename__ = "surveys"
