@@ -27,7 +27,9 @@ from pandas import DataFrame
 import pandas as pd
 
 
-def get_sq_results(session, sq, percentage=False, sort=True, min_count=None) -> DataFrame:
+def get_sq_results(
+    session, sq, percentage=False, sort=True, min_count=None
+) -> DataFrame:
     """
     Get the number of occurrence per response for a given SurveyQuestion
 
@@ -42,7 +44,7 @@ def get_sq_results(session, sq, percentage=False, sort=True, min_count=None) -> 
     )
 
     if min_count:
-        res = [ r for r in res if r[1] >= min_count ]
+        res = [r for r in res if r[1] >= min_count]
 
     labels = [r[0] for r in res]
 
@@ -115,6 +117,7 @@ def get_sq_results_group_by_sq(session, sq1, sq2, percentage=True) -> DataFrame:
 
     return df
 
+
 def get_q_results_over_time(session, q, percentage=True, min_count=None):
     """
     Get results for a given question on all surveys
@@ -122,30 +125,30 @@ def get_q_results_over_time(session, q, percentage=True, min_count=None):
     Return results as a DataFrame with one column per survey
     """
 
-    sqs = (
-        session.query(SurveyQuestions)
-        .filter(SurveyQuestions.question == q)
-        .all()
-    )
+    sqs = session.query(SurveyQuestions).filter(SurveyQuestions.question == q).all()
 
     responses = {}
     for sq in sqs:
-        responses[sq.survey_id] = get_sq_results(session, sq, percentage=percentage, min_count=min_count)
+        responses[sq.survey_id] = get_sq_results(
+            session, sq, percentage=percentage, min_count=min_count
+        )
 
     # Combine all the dataframe together
-    dfs = [ r for r in responses.values()]
+    dfs = [r for r in responses.values()]
     df = pd.concat(dfs, axis=1, sort=True)
     df.columns = list(responses.keys())
 
     # Calculate mean by row
     # df.mean(1)
-    ## Sort Index by mean values    
+    ## Sort Index by mean values
     # df.reindex(df.mean(1).sort_values(0).index, axis=0)
 
     return df
 
 
-def get_gsq_results(session, gsq: SurveyQuestions, percentage=True, order_by=None) -> DataFrame:
+def get_gsq_results(
+    session, gsq: SurveyQuestions, percentage=True, order_by=None
+) -> DataFrame:
     """
     Get results for a SurveyQuestions of type Multiple choice Grid
 
@@ -158,7 +161,7 @@ def get_gsq_results(session, gsq: SurveyQuestions, percentage=True, order_by=Non
         responses[sq.text] = get_sq_results(session, sq, percentage=percentage)
 
     # Combine all the dataframe together
-    dfs = [ r for r in responses.values()]
+    dfs = [r for r in responses.values()]
     df = pd.concat(dfs, axis=1, sort=True)
     df.columns = list(responses.keys())
 

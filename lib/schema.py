@@ -27,6 +27,7 @@ question_choices = Table(
     Column("choice_id", Integer, ForeignKey("choices.id")),
 )
 
+
 class Surveys(Base):
     """
     Collection of Survey.
