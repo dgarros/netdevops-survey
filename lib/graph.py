@@ -38,7 +38,14 @@ netdevops_style_trends = Style(colors=TRENDS_COLOR, **style_args)
 
 
 def reorder_index_we_havent(indexes):
+    """
+    In a list of indexes, search for a string that start with either 
+        we haven or we are not
+    and move it at the top of the list
 
+    Return: 
+    List if indexes
+    """
     tmp = list(indexes)
 
     # Identify if and where is the response "we haven't automated ..." and move it to the end
@@ -57,7 +64,7 @@ def reorder_index_we_havent(indexes):
 
 
 def generate_graphs(
-    chart, filename, out_dir="../results/graphs", out_format=["svg", "png"]
+    chart, filename, out_dir="../graphs", out_format=["svg", "png"]
 ):
     """
     Generate images from chart object
@@ -65,10 +72,10 @@ def generate_graphs(
     """
 
     if "png" in out_format:
-        chart.render_to_png(f"{out_dir}/{filename}.png")
+        chart.render_to_png(f"{out_dir}/png/{filename}.png")
 
     if "svg" in out_format:
-        chart.render_to_file(f"{out_dir}/{filename}.svg")
+        chart.render_to_file(f"{out_dir}/svg/{filename}.svg")
 
     logging.info(f"Generated {filename} {out_format}")
 
@@ -192,6 +199,9 @@ def bar_graph_tools(session, sq, percentage=True):
 
 
 def bar_graph(session, sq, percentage=True, sort=False):
+    """
+    Generate a generic Bar graph from a SurveyQuestions
+    """
 
     results = get_sq_results(session, sq, percentage=percentage, sort=sort)
     count, avg_r, min_r, max_r = get_sq_stats(session, sq)
@@ -225,6 +235,9 @@ def bar_graph(session, sq, percentage=True, sort=False):
 
 
 def compare_results_over_time_hbar(session, q, results_order=None):
+    """
+    Generate HorizontalBar to compare the results of a question over multiple survey
+    """
 
     results = get_q_results_over_time(session, q, percentage=True, min_count=2)
 
@@ -315,7 +328,9 @@ def compare_results_over_time_sbar(session, q, results_order=None):
 
 
 def compare_results_nwk_size(session, sq):
-
+    """
+    Slice the results of a SurveyQuestions by network size
+    """
     sq2 = (
         session.query(SurveyQuestions)
         .filter(SurveyQuestions.question_id == "env-nbr-devices")
