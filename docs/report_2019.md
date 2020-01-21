@@ -4,9 +4,9 @@
 
 The Netdevops survey is a community driven survey that is designed to help understand how network operators and engineers are using automation to operate their network today.
 
-The 2019 Edition collected responses from 294 participants from Oct 10th to Nov 10th 2019. 
+The 2019 Edition collected responses from 293 participants from Oct 10th to Nov 10th 2019. 
 
-If you want to get involved, please visit [our github page](https://github.com/dgarros/netdevops-survey/)
+If you want to get involved or are looking for more information, please visit [our github page](https://github.com/dgarros/netdevops-survey/)
 
 # 2019 Report
 ## Operation/Management of your network 
