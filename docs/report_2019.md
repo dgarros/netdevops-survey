@@ -11,7 +11,7 @@ If you want to get involved or are looking for more information, please visit [o
 # 2019 Report
 ## Operation/Management of your network 
 
-![Operation Automated](../graphs/svg/netdevops_survey_2019_operation-automated_tool.svg)
+![Operation Automated](../graphs/png/netdevops_survey_2019_operation-automated_tool.png)
 ![](../graphs/png/netdevops_survey_operation-automated_compare.png)
 
 --------------
