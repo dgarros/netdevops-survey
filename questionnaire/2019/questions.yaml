@@ -1,0 +1,388 @@
+
+
+---
+# ------------------------------------------------------------------------------
+# WORK IN PROGRESS until Oct 9th
+# - Please open an issue on Github or join the conversation on Slack if you would 
+# like to propose a change in the list of questions
+# 
+# - Please open a Pull Request directly on Github if you would like to add a response
+# in an existing question
+# ------------------------------------------------------------------------------
+- section: OPERATION/MANAGEMENT OF YOUR NETWORK
+  questions:
+  - title: What operations in your network are currently automated? 
+    type: Multiple choice 
+    id: operation-automated
+    responses:
+    - Day 0 Provisioning using a vendor solution (ZTP, POAP, Amnesiac, etc.)
+    - Configuration generation
+    - Configuration deployment
+    - Configuration archiving
+    - Software qualification
+    - Troubleshooting
+    - Software upgrade
+    - Fault Remediation
+    - Pre/Post Change Checks
+    - Anomaly detection
+    - Data Collection / Reporting
+    - Compliance Checks
+    - Topology Mapping
+
+  - title: How are you keeping track of your configuration changes? 
+    type: Multiple choice
+    id: config-track-changes
+    responses:
+    - Version control (github, gitlab, svn …)
+    - FTP/SCP/TFTP
+    - Rancid/Oxidized
+    - Vendor specific tools
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Solarwind NCM
+    - HPE Network Automation (HP NA)
+    - Microsoft Excel
+    - Kiwi CatTools
+    - We are not keeping track of that
+    - Other (text field)
+  
+  - title: Have you automated the decision to deploy a new configuration? (auto-remediation, auto-change-validation)
+    type: Single choice 
+    id: config-decide-changes
+    responses:
+    - Yes
+    - Partially
+    - No
+
+  - title: Do you allow configurations to be manually changed via CLI in addition to automated deployments?
+    type: Single choice 
+    id: config-automated-changes
+    responses:
+    - Yes
+    - No
+
+  - title: Configuration – If you are automating the generation and/or the deployment of your configurations what solution(s) are you using?
+    type: Multiple choice 
+    id: config-gen-deploy
+    responses:
+    - Excel macros
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - NSO (Tail-F)
+    - Nornir
+    - NAPALM
+    - HPE Network Automation (HP NA)
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Controller (ODL, DNAC, NSX, OpenContrail...)
+    - Network vendor specific tools (CVP, Space, PI ...)
+    - We haven’t automated the generation or deployment of our configurations
+    - Other (text field)
+
+  - title: How often do you make changes in production
+    type: Multiple choice grid
+    id: prod-changes
+    responses:
+    - { text: Minor changes, id: minor }
+    - { text: Major changes, id: major }
+    options:
+    - Not sure
+    - Less than 1 per month
+    - 1 to 5 per month
+    - 1 to 5 per week
+    - More than 1 a day
+
+  - title: Software Upgrade - If you are automating software upgrades in your network what solution(s) are you using?
+    type: Multiple choice 
+    id: software-upgrade
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Solarwind NCM
+    - HPE Network Automation (HP NA)
+    - Network vendor specific tools (DNAC, CVP, Space, PI ...)
+    - We haven’t automated software upgrades
+    - Other (text field)
+
+  - title: Software Qualification/Validation - If you are automating software qualification for your network what solution(s) are you using?
+    type: Multiple choice 
+    id: software-validation
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - Robot Framework / Behave
+    - SaltStack
+    - NSO (Tail-F)
+    - Low level custom scripts (Python paramiko/socket)
+    - Custom scripts using common libraries (netmiko/napalm)
+    - Network vendor specific tools (DNAC, CVP, Space, PI ...)
+    - We haven’t automated software qualification
+    - Other (text field)
+
+  - title: Anomaly detection – what data sources are you using to detect problems in your network ? 
+    type: Multiple choice 
+    id: anomaly-detection-sources
+    responses:
+    - ICMP/PING
+    - Other active probes (IP SLA/RPM)
+    - External probes (pingmesh)
+    - SNMP
+    - Syslog
+    - sFlow/Netflow
+    - Routing Information
+    - API
+    - Streaming Telemetry
+
+  - title: Anomaly detection – What mechanism are you using to identify problems in your network ? 
+    type: Multiple choice
+    id: anomaly-detection-signal
+    responses:
+    - Up/Down/Threshold alert
+    - Events correlation / rule engine
+    - Events correlation using AI/ML
+    - Proactive monitoring data analysis using AI/ML
+    - We haven’t automated the detection of anomaly
+
+# ----------------------------------------------------
+- section: YOUR ENVIRONMENT
+  questions:
+  - title: How many network devices are you managing?
+    type: Single choice 
+    id: env-nbr-devices
+    responses:
+    - 0-50
+    - 51-250
+    - 251-1000
+    - 1001-5000
+    - 5001-10000
+    - 10001-50000
+    - 50001+
+
+  - title: Which networking vendor devices are you managing?
+    type: Multiple choice 
+    id: env-vendors
+    responses:
+    - Arista
+    - Big Switch
+    - Extreme Networks (brocade)
+    - Cisco IOS/IOS XE
+    - Cisco NX-OS/ACI
+    - Cisco IOS XR
+    - Cumulus
+    - Dell/EMC
+    - Juniper
+    - HPE
+    - Huawei
+    - VMWare
+    - Google GCP
+    - Amazon AWS
+    - Microsoft Azure
+    - Other…
+
+  - title: What types of environments are you managing?
+    type: Multiple choice 
+    id: env-type
+    responses:
+    - Datacenter
+    - Campus/User Access
+    - Internet Peering
+    - WAN
+    - Service Provider / Edge
+    - Public Cloud
+
+  - title: What programmatic language(s) are you using? 
+    type: Multiple choice grid 
+    id: env-language
+    responses:
+    - { text: Python, id: python }
+    - { text: Golang, id: golang }
+    - { text: Javascript, id: javascript }
+    - { text: Ruby, id: ruby }
+    - { text: C/C++, id: c-cpp }
+    - { text: Shell (Bash,...), id: shell }
+    - { text: Expect, id: expect }
+    - { text: Powershell, id: powershell }
+    - { text: Other, id: other }
+    options:
+    - None
+    - A little
+    - A lot
+
+  - title: Which solution are you using to run virtual network devices for training or qualification purpose?
+    type: Multiple choice 
+    id: env-virtual-network
+    responses:
+    - Vagrant
+    - VMWare
+    - OpenStack
+    - Ravello
+    - vrnetlab
+    - Tesuto
+    - Docker Compose
+    - Kubernetes
+    - Non-VMWare hypervisor (KVM, et al.)
+    - GNS3
+    - UNetLab
+    - EVE-NG
+    - Homemade solution
+    - Vendor provided solution (VIRL, Junosphere .. )
+    - We are not using virtual network devices for training or qualification
+    - Other (text field)
+
+  - title: On the server side, what automation tools are you using ?
+    type: Multiple choice 
+    id: env-server-automation
+    responses:
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - CF Engine
+    - RunDeck
+    - Vendor Specific
+    - Microsoft SCCM
+    - We don't have automation for servers
+    - Other (text field)
+  
+  - title: Where are you located?
+    type: Single choice 
+    id: env-location
+    responses:
+    - North America
+    - South America
+    - Africa
+    - Europe
+    - Middle East
+    - Asia
+    - Australia, Oceania or Pacific Islands
+
+  - title: What is your organization’s preferred approach for network automation tools used in production ?
+    type: Single choice
+    id: org-preference
+    responses:
+    - buy 
+    - build internally
+    - use open source without support
+    - use open source with support
+    - no prefered approach, varies on case by case
+
+# ----------------------------------------------------
+- section: TRANSITION TO NETWORK AUTOMATION
+  questions:
+  - title: For how long have you been leveraging automation in your network in a significant way
+    type: Single choice 
+    id: transition-team-how-long
+    responses:
+    - Less than 1 year
+    - 1 to 2 years
+    - 2 to 5 years 
+    - More than 5 years
+
+  - title: What actions did your team take to transition to network automation
+    type: Multiple choice
+    id: transition-team-actions
+    responses:
+    - Some of us learned on their own
+    - Some of us took some network automation / programming training
+    - We engaged a consulting firm to help get started
+    - We hired dedicated Network Automation Engineer(s)
+    - We participated in hackathon(s)
+    - Other (text field)
+
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      how long did it take you to make the transition? 
+    type: Single choice 
+    id: transition-self-how-long
+    responses:
+    - Less than 1 year
+    - 1 to 2 years
+    - 2 to 5 years 
+    - More than 5 years
+  
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      How many hours did you put in training / self-learning?
+    type: Single choice
+    id: transition-self-nbr-hours
+    responses:
+    - 0-200
+    - 201-1000
+    - 1001-4000
+    - More than 4000
+
+  - title: > 
+      If you (personally) have transitioned from a network engineer role to a network automation role, 
+      How did you manage to find time for this transition?
+    type: Multiple choice 
+    id: transition-self-find-time
+    responses:
+    - Learned on my own time
+    - Dedicated some time per week at work
+    - Attended formal training 
+    - Transitioned into the new role full-time and learned on the job
+
+# ----------------------------------------------------
+- section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
+  questions:
+  - title: Which of the following concepts are you interested in or have currently implemented?
+    type: Multiple choice grid 
+    id: trend-topics
+    responses:
+    - { text: Infrastructure As Code, id: iac }
+    - { text: Event Driven Automation, id: event-driven }
+    - { text: Chatops, id: chatops }
+    - { text: Continuous Integration/ Delivery - CI/CD, id: ci-cd }
+    - { text: DevOps, id: devops }
+    - { text: Streaming Telemetry, id: telemetry-streaming }
+    - { text: Intent-based solution / IBN, id: ibns }
+    - { text: Source of Truth, id: sot }
+    - { text: Graph Database, id: graph-db }
+    - { text: Network Health Monitoring, id: network-health } 
+    options:
+    - I don't know
+    - No interest
+    - Thinking about it
+    - Currently evaluating it
+    - Already in production
+
+  - title: Which of the following tools are you interested in or have currently implemented?
+    type: Multiple choice grid 
+    id: trend-tools
+    responses: 
+    - { text: Ansible, id: ansible }
+    - { text: Chef, id: chef }
+    - { text: Puppet, id: puppet }
+    - { text: Saltstack, id: saltstack }
+    - { text: NAPALM, id: napalm }
+    - { text: Nornir, id: nornir }
+    - { text: Netbox, id: netbox }
+    - { text: ELK (Logstash/Kibana), id: elk }
+    - { text: Grafana/Prometheus/Influxdb, id: tsdb }
+    - { text: Kentik, id: kentik }
+    - { text: NSO (tail-F), id: nso }
+    - { text: Git (github/gitlab), id: git }
+    - { text: "Network Verification Software (Batfish, Forward Networks, Veriflow ..)", id: network-verification }
+    - { text: "Keyword based testing (RobotFramework, Behave)", id: keyword-testing }
+    - { text: "CI (jenkins, travis-ci, circle-ci, gitlab-ci)", id: ci }
+    - { text: Stackstorm, id: stackstorm }
+    options:
+    - I don't know
+    - No interest
+    - Thinking about it
+    - Currently evaluating it
+    - Already in production
+
+- section: Feedback
+  questions:
+  - title: "Open form for feedback or additional information you would like to share. (Reminder: all responses will be made public)"
+    type: Open form
+    id: feedback
+

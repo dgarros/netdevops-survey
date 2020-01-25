@@ -2,9 +2,11 @@
 
 ---
 - section: OPERATION/MANAGEMENT OF YOUR NETWORK
+  
   questions:
   - title: What operations in your network are currently automated? 
     type: Multiple choice 
+    id: operation-automated
     responses:
     - Day 0 Provisioning using a vendor solution (ZTP, POAP, Amnesiac, etc.)
     - Configuration generation
@@ -19,7 +21,8 @@
     - Compliance Checks
     - Other…
 
-  - title: How are you keeping track of your configuration changes? 
+  - title: How are you keeping track of your configuration changes?
+    id: config-track-changes
     type: Multiple choice 
     responses:
     - Version control (github, gitlab, svn …)
@@ -30,6 +33,7 @@
     - Other…
   
   - title: Have you automated the decision to deploy a new configuration? (auto-remediation, auto-change-validation)
+    id: config-decide-changes
     type: Single choice 
     responses:
     - Yes
@@ -37,12 +41,14 @@
     - No
 
   - title: Do you allow configurations to be manually changed via CLI in addition to automated deployments?
+    id: config-automated-changes
     type: Single choice 
     responses:
     - Yes
     - No
 
   - title: Configuration – If you are automating the generation and/or the deployment of your configurations what solution(s) are you using?
+    id: config-gen-deploy
     type: Multiple choice 
     responses:
     - Ansible
@@ -59,10 +65,11 @@
     - Other…
 
   - title: How often do you make changes in production
-    type: Multiple choice 
+    id: prod-changes
+    type: Multiple choice grid
     responses:
-    - Minor changes
-    - Major changes
+    - { text: Minor changes, id: minor }
+    - { text: Major changes, id: major }
     options:
     - Not sure
     - Less than 1 per month
@@ -71,6 +78,7 @@
     - More than 1 a day
 
   - title: Troubleshooting - If you are automating the troubleshooting of your network what solution(s) are you using?
+    id: troubleshoot
     type: Multiple choice 
     responses:
     - Ansible
@@ -87,6 +95,7 @@
     - Other…
 
   - title: Software Upgrade - If you are automating software upgrades in your network what solution(s) are you using?
+    id: software-upgrade
     type: Multiple choice 
     responses:
     - Ansible
@@ -100,6 +109,7 @@
 
   - title: Software Qualification/Validation - If you are automating software qualification for your network what solution(s) are you using?
     type: Multiple choice 
+    id: software-validation
     responses:
     - Ansible
     - Chef
@@ -115,6 +125,7 @@
   
   - title: Anomaly detection – If you have automated the detection of anomaly in your network, what solution(s) are you using? 
     type: Multiple choice 
+    id: anomaly-detection
     responses:
     - Ansible
     - Chef
@@ -133,6 +144,7 @@
   questions:
   - title: How many network devices are you managing?
     type: Single choice 
+    id: env-nbr-devices
     responses:
     - 0-50
     - 51-250
@@ -141,6 +153,7 @@
 
   - title: Which networking vendor devices are you managing?
     type: Multiple choice 
+    id: env-vendors
     responses:
     - Arista
     - Big Switch
@@ -156,6 +169,7 @@
 
   - title: What types of environments are you managing?
     type: Multiple choice 
+    id: env-type
     responses:
     - Datacenter
     - Campus/User Access
@@ -165,21 +179,23 @@
 
   - title: What programmatic language(s) are you using? 
     type: Multiple choice grid 
+    id: env-language
     responses:
-    - Python
-    - Golang
-    - Javascript
-    - Ruby
-    - C/C++
-    - Shell
-    - Other
+    - { text: Python, id: python }
+    - { text: Golang, id: golang }
+    - { text: Javascript, id: javascript }
+    - { text: Ruby, id: ruby }
+    - { text: C/C++, id: c-cpp }
+    - { text: Shell, id: shell }
+    - { text: Other, id: other }
     options:
     - None
     - A little
     - A lot
 
   - title: Which solution are you using to run virtual network devices for training or qualification purpose?
-    type: Multiple choice 
+    type: Multiple choice
+    id: env-virtual-network
     responses:
     - Vagrant
     - VMWare
@@ -196,6 +212,7 @@
   
   - title: On the server side, what automation tools are you using ?
     type: Multiple choice 
+    id: env-server-automation
     responses:
     - Ansible
     - Chef
@@ -209,6 +226,7 @@
   
   - title: Where are you located?
     type: Single choice 
+    id: env-location
     responses:
     - North America
     - South America
@@ -223,15 +241,16 @@
 - section: INDUSTRY TRENDS/ FUTURE DIRECTIONS
   questions:
   - title: In the following list of topic, which one are you interested about or have currently implemented ?
-    type: Multiple choice grid 
+    type: Multiple choice grid
+    id: trend-topics
     responses:
-    - Infrastructure as code
-    - Event Driven Automation
-    - Chatops
-    - Continuous Integration/ Delivery - CI/CD
-    - Devops
-    - Telemetry streaming
-    - Intent based solution
+    - { text: Infrastructure as code, id: iac }
+    - { text: Event Driven Automation, id: event-driven }
+    - { text: Chatops, id: chatops }
+    - { text: Continuous Integration/ Delivery - CI/CD, id: ci-cd }
+    - { text: Devops, id: devops }
+    - { text: Telemetry streaming, id: telemetry-streaming }
+    - { text: Intent based solution, id: ibns }
     options:
     - I don't know
     - No interest
@@ -241,19 +260,20 @@
 
   - title: In the following list of tool, which one are you interested about or have currently implemented ?
     type: Multiple choice grid 
+    id: trend-tools
     responses: 
-    - Ansible
-    - Chef
-    - Puppet
-    - Saltstack
-    - NAPALM
-    - Git (github/gitlab)
-    - Keyword based testing (RobotFramework, Behave)
-    - CI (jenkins, travis-ci, circle-ci, gitlab-ci)
-    - Stackstorm
-    - Apstra AOS
-    - GluWare 
-    - Anuta Networks
+    - { text: Ansible, id: ansible }
+    - { text: Chef, id: chef }
+    - { text: Puppet, id: puppet }
+    - { text: Saltstack, id: saltstack }
+    - { text: NAPALM, id: napalm }
+    - { text: Git (github/gitlab), id: git }
+    - { text: Keyword based testing (RobotFramework, Behave), id: keyword-testing }
+    - { text: CI (jenkins, travis-ci, circle-ci, gitlab-ci), id: ci }
+    - { text: Stackstorm, id: stackstorm }
+    - { text: Apstra AOS, id: apstra }
+    - { text: GluWare, id: gluware }
+    - { text: Anuta Networks, id: anuta-networks }
     options:
     - I don't know
     - No interest
@@ -264,5 +284,6 @@
 - section: Feedback
   questions:
   - title: Open form for feedback or additional informations you would like to share. (Attention everyone will have access to it)
-    type: Open form
+    type: Open Form
+    id: feedback
 

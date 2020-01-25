@@ -1,7 +1,7 @@
 
 This repository is the home of the Netdevops survey, The goal of this survey is to collect information to understand how network operators and engineers are using automation to operate their network today. 
 
-There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers, but none provide an overview of the state of “network operations through automation” as of today.
+There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, little is known about the state of “network operations through automation”. This 2nd edition of the Netdevops survey seeks to address that gap, and gather a 2019 snapshot.
 
 # Vendor Neutral and Collaborative
 
@@ -13,19 +13,17 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 
 # 2019 Edition
 
-## Agenda
-* August 1st to September 27th : Definition of the questionnaire (github)
-* Sept 30th to Oct 27th : Survey open for response
+The 2019 Edition is now closed, the results are available in the results folder in TSV format or in a SQLite database 
 
-## TODO List
-* Define the questionnaire for the 2019 edition
-* Find a solution to raw results
-* Find a solution to create a report
+## Timing
+* August 1st to Oct 9th 2019 : Definition of the questionnaire (github)
+* Oct 10th to Nov 10th 2019: Survey open for response
+* Nov 11th 2019 to Jan 6th 2020 : Cleaning results
+* Jan 7th 2020 : Cleaned results published
 
 ## Core Team
 * Francois Caen
 * Damien Garros
-* (please reach out if you are interested to help) 
 
 ## Tools Selection and Requirements
 The netdevops survey can be broken down in 4 steps, each with it's own set of requirements
@@ -46,24 +44,23 @@ No authentification should be required.
 **Proposed solution**: Google Form 
 
 ### Raw Results
-Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a google sheet).
+Survey results will be available in raw format for anyone to analyze (in 2016 the results were available in a Google Sheet).
 Ideally as we start to have multiple editions of the survey, it would be interesting to have the results available in a common format/place.
 
-**Proposed solution**: TBD, please join the discussion to help us find the best solution here.
+**Proposed solution**: TSV file saved in Github 
 
 ### Reports
 if possible it would be great to have a solution to:
 - Collaboratively create a report with nice graphics 
 - Distribute and update this report (web UI?)
 
-**Proposed solution**: TBD, please join the discussion to help us find the best solution here
+**Proposed solution**: Markdown files in Github + Graphs generated with Pygal
 
 # 2016 Edition
 
 The first edition of the netdevops survey took place in Fall 2016
-* The raw results are available [HERE](https://drive.google.com/open?id=19zpdswVSBI4Eel_vrphB5JwUjZ7MtV0LY6Ifz57tCFE)   
-* The draft of the report is available [HERE](https://drive.google.com/open?id=1YLgCIo7DkRmHFog4teITOGmsC7KB7qQKdjkzsW2KlXs)  
- 
+* The raw results are available in the results folder in TSV format or in a SQLite database 
+
 ## Core Team
 - Jason Frazier
 - David Barroso
