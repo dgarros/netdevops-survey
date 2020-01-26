@@ -169,6 +169,10 @@ def main():
             filename = f"netdevops_survey_{question.id}_compare"
             generate_graphs(chart, filename, args.out, out_format)
 
+            chart = compare_count_distribution(session, question)
+            filename = f"netdevops_survey_{question.id}_nbr_resp"
+            generate_graphs(chart, filename, args.out, out_format)
+
         if question.type == None and question.parent_id and len(sqs) > 1:
 
             if "trend" in question.parent_id:

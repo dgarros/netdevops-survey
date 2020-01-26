@@ -198,3 +198,55 @@ def get_sq_stats(session, sq):
     max_responses = max(responses)
 
     return (nbr_responses, round(avg_responses, 2), min_responses, max_responses)
+
+
+def get_sq_nbr_responses_count(session, sq, percentage=True) -> DataFrame:
+    """
+    Return the number of responses per count number for a given 
+    Multi choice SurveyQuestions
+
+    Return the results as a pandas DataFrame with one column called "value"
+    """
+
+    res = (
+        session.query(func.count(QuestionResponses.choice_id))
+        .filter(QuestionResponses.survey_question == sq)
+        .group_by(QuestionResponses.surveyresponse_id)
+        .all()
+    )
+
+    nbr_responses = len(res)
+
+    counts = defaultdict(int)
+
+    for r in res:
+        counts[r] += 1
+    
+    if percentage:
+        df= pd.DataFrame({"value": [round((v / nbr_responses) * 100, 3) for v in list(counts.values())]}, index=counts.keys())
+    else: 
+        df= pd.DataFrame({"value": list(counts.values())}, index=counts.keys())
+
+    return df.sort_index()
+
+def get_q_nbr_resp_over_time(session, q) -> DataFrame:
+
+    sqs = session.query(SurveyQuestions).filter(SurveyQuestions.question == q).all()
+
+    responses = {}
+    for sq in sqs:
+        responses[sq.survey_id] = get_sq_nbr_responses_count(
+            session, sq, percentage=True
+        )
+
+    # Combine all the dataframe together
+    dfs = [r for r in responses.values()]
+    df = pd.concat(dfs, axis=1, sort=True)
+    df.columns = list(responses.keys())
+
+    # Calculate mean by row
+    # df.mean(1)
+    ## Sort Index by mean values
+    # df.reindex(df.mean(1).sort_values(0).index, axis=0)
+
+    return df

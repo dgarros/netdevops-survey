@@ -377,3 +377,29 @@ def compare_results_nwk_size(session, sq):
         chart.add(column, list(results[column]))
 
     return chart
+
+def compare_count_distribution(session, q):
+
+    results = get_q_nbr_resp_over_time(session, q)
+
+    # order columns too
+    cols = sorted(list(results.columns))
+    results = results[cols]
+
+    title = q.desc.replace("?", "?\n")
+
+    # nbr_edition = len(list(results.columns))
+    chart = pygal.Bar(
+        # legend_at_bottom=True,
+        width=1920,
+        height=1080,
+        title=f"NetDevOps Survey \n Number of responses per participant \n {title}",
+        style=netdevops_style_trends,
+    )
+
+    chart.x_labels = map(str, list(results.index))
+
+    for column in list(results.columns):
+        chart.add(column, list(results[column]))
+
+    return chart
