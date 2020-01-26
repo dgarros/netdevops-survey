@@ -11,6 +11,11 @@ Everyone is welcome to participate in the definition of the questionnaire and th
 Questions and feedback can be provided via Github issue or via the NetworkToCode Slack channel. 
 You can sign up and join the Slack community here: http://slack.networktocode.com/
 
+# Reports
+
+- [2016](https://dgarros.github.io/netdevops-survey/reports/2016)
+- [2019](https://dgarros.github.io/netdevops-survey/reports/2019)
+
 # 2019 Edition
 
 The 2019 Edition is now closed, the results are available in the results folder in TSV format or in a SQLite database 
@@ -24,6 +29,21 @@ The 2019 Edition is now closed, the results are available in the results folder 
 ## Core Team
 * Francois Caen
 * Damien Garros
+
+# 2016 Edition
+
+The first edition of the netdevops survey took place in Fall 2016
+* The raw results are available in the results folder in TSV format or in a SQLite database 
+
+## Core Team
+- Jason Frazier
+- David Barroso
+- Pete Lumbis
+- Jason Edelman
+- Senthil Kumar Ganesan
+- Damien Garros
+
+# Project Organization
 
 ## Tools Selection and Requirements
 The netdevops survey can be broken down in 4 steps, each with it's own set of requirements
@@ -55,16 +75,3 @@ if possible it would be great to have a solution to:
 - Distribute and update this report (web UI?)
 
 **Proposed solution**: Markdown files in Github + Graphs generated with Pygal
-
-# 2016 Edition
-
-The first edition of the netdevops survey took place in Fall 2016
-* The raw results are available in the results folder in TSV format or in a SQLite database 
-
-## Core Team
-- Jason Frazier
-- David Barroso
-- Pete Lumbis
-- Jason Edelman
-- Senthil Kumar Ganesan
-- Damien Garros
