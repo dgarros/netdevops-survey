@@ -24,6 +24,8 @@ GREEN = "#38761D"
 RED = "#B45F06"
 TRENDS_COLOR = ("#E39A48", "#C9CAC9", "#77C780", "#00B814", "#067512")
 
+# COLORS = ("#2589BD", "#A39171", "#86BAA1", "#FFCF56", "#38686A", "#00635D", "#6D9DC5", "#A3B4A2")
+COLORS = ( "#009E73", "#E69F00", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
 style_args = dict(
     label_font_size=28,
     major_label_font_size=28,
@@ -139,9 +141,7 @@ def pie_graph(session, sq):
         width=1920,
         height=1080,
         title=f"NetDevOps Survey ({sq.survey_id}) \n {title}",
-        style=LightenStyle(
-            GREEN, step=int(len(list(results.index)) * 1.5), **style_args
-        ),
+        style=Style(colors=COLORS, **style_args),
         inner_radius=0.4,
     )
 
@@ -187,7 +187,7 @@ def bar_graph_tools(session, sq, percentage=True):
         width=1920,
         height=1080,
         title=f"NetDevOps Survey ({sq.survey_id})\n{title}\n{stats}",
-        style=LightenStyle(GREEN, step=2, **style_args),
+        style=Style(colors=COLORS, **style_args),
         x_title=x_legend,
     )
 
@@ -223,7 +223,7 @@ def bar_graph(session, sq, percentage=True, sort=False):
         width=1920,
         height=1080,
         title=chart_title,
-        style=LightenStyle(GREEN, step=2, **style_args),
+        style=Style(colors=COLORS, **style_args),
         x_title=x_legend,
     )
 
@@ -266,9 +266,7 @@ def compare_results_over_time_hbar(session, q, results_order=None):
         width=1920,
         height=1080,
         title=f"NetDevOps Survey \n {title}",
-        style=LightenStyle(
-            GREEN, step=int(len(list(results.columns)) * 1.25), **style_args
-        ),
+        style=Style(colors=COLORS, **style_args),
         x_title="%",
     )
     chart.x_labels = map(str, list(results.index))
@@ -357,9 +355,7 @@ def compare_results_nwk_size(session, sq):
         width=1920,
         height=1080,
         title=f"NetDevOps Survey \n {title}",
-        style=LightenStyle(
-            RED, step=int(len(list(results.index)) * 1.25), **style_args
-        ),
+        style=Style(colors=COLORS, **style_args),
         x_title="%",
     )
 
