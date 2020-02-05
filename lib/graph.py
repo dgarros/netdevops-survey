@@ -27,6 +27,7 @@ LANGUAGE_COLOR = ("#E39A48", "#77C780", "#067512")
 
 # COLORS = ("#2589BD", "#A39171", "#86BAA1", "#FFCF56", "#38686A", "#00635D", "#6D9DC5", "#A3B4A2")
 COLORS = ( "#009E73", "#E69F00", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
+
 style_args = dict(
     label_font_size=28,
     major_label_font_size=28,
@@ -388,18 +389,45 @@ def compare_count_distribution(session, q):
 
     title = q.desc.replace("?", "?\n")
 
-    # nbr_edition = len(list(results.columns))
     chart = pygal.Bar(
-        # legend_at_bottom=True,
         width=1920,
         height=1080,
         title=f"NetDevOps Survey \n Number of responses per participant \n {title}",
-        style=netdevops_style_trends,
+        style=Style(colors=COLORS, **style_args),
     )
 
     chart.x_labels = map(str, list(results.index))
 
     for column in list(results.columns):
         chart.add(column, list(results[column]))
+
+    return chart
+
+def count_distribution(session, sq):
+
+    
+    results = get_sq_nbr_responses_count(
+            session, sq, percentage=True
+        )
+
+    
+    title = sq.text.replace("?", "?\n")
+
+    # nbr_edition = len(list(results.columns))
+    chart = pygal.Bar(
+        width=1920,
+        height=1080,
+        title=f"NetDevOps Survey \n Number of responses per participant \n {title}",
+        style=Style(colors=COLORS, **style_args),
+    )
+
+    chart.show_legend = False
+    chart.x_labels = map(str, list(results.index))
+    chart.add(sq.survey.id, list(results["value"]))
+
+    # chart.x_labels = map(str, list(results.index))
+
+    # for column in list(results.columns):
+    #     chart.add(column, list(results[column]))
 
     return chart

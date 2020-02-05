@@ -131,6 +131,10 @@ def main():
                 filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_tool_perc"
                 generate_graphs(chart, filename, args.out, out_format)
 
+                chart = count_distribution(session, sq)
+                filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_count_distribution"
+                generate_graphs(chart, filename, args.out, out_format)
+
             elif question.type == "Single choice":
 
                 chart = bar_graph(session, sq, percentage=False, sort=False)
