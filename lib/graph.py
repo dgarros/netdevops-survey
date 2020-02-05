@@ -127,17 +127,18 @@ def stacked_graph_gsq(session, sq, results_order=None):
     return chart
 
 
-def pie_graph(session, sq):
+def pie_graph(session, sq, percentage=True):
     """
     Generate Simple Pie Chart for a given SurveyQuestions
     """
 
-    results = get_sq_results(session, sq)
+    results = get_sq_results(session, sq, percentage=percentage)
 
     title = sq.text.replace("?", "?\n")
 
     chart = pygal.Pie(
         legend_at_bottom=False,
+        print_values=True,
         width=1920,
         height=1080,
         title=f"NetDevOps Survey ({sq.survey_id}) \n {title}",
@@ -146,7 +147,7 @@ def pie_graph(session, sq):
     )
 
     for index, row in results.sort_values(by=["value"], ascending=False).iterrows():
-        chart.add(index, row["value"])
+        chart.add(index, round(row["value"], 1))
 
     return chart
 
