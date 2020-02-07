@@ -127,10 +127,18 @@ def main():
                 filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_tool"
                 generate_graphs(chart, filename, args.out, out_format)
 
+                chart = bar_graph_tools(session, sq, percentage=True)
+                filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_tool_perc"
+                generate_graphs(chart, filename, args.out, out_format)
+
             elif question.type == "Single choice":
 
                 chart = bar_graph(session, sq, percentage=False, sort=False)
                 filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_bar"
+                generate_graphs(chart, filename, args.out, out_format)
+
+                chart = bar_graph(session, sq, percentage=True, sort=False)
+                filename = f"netdevops_survey_{sq.survey_id}_{sq.question_id}_bar_perc"
                 generate_graphs(chart, filename, args.out, out_format)
 
                 chart = pie_graph(session, sq)
