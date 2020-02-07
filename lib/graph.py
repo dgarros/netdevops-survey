@@ -23,6 +23,7 @@ from .query import *
 GREEN = "#38761D"
 RED = "#B45F06"
 TRENDS_COLOR = ("#E39A48", "#C9CAC9", "#77C780", "#00B814", "#067512")
+LANGUAGE_COLOR = ("#E39A48", "#77C780", "#067512")
 
 # COLORS = ("#2589BD", "#A39171", "#86BAA1", "#FFCF56", "#38686A", "#00635D", "#6D9DC5", "#A3B4A2")
 COLORS = ( "#009E73", "#E69F00", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
@@ -37,6 +38,8 @@ style_args = dict(
 )
 
 netdevops_style_trends = Style(colors=TRENDS_COLOR, **style_args)
+netdevops_style_language = Style(colors=TRENDS_COLOR, **style_args)
+
 
 
 def reorder_index_we_havent(indexes):
@@ -110,13 +113,21 @@ def stacked_graph_gsq(session, sq, results_order=None):
 
     title = sq.text.replace("?", "?\n")
 
+    if len(results.index) == 3:
+        colors = LANGUAGE_COLOR
+    else:
+        colors = TRENDS_COLOR
+
     chart = pygal.HorizontalStackedBar(
         legend_at_bottom=True,
         stack_from_top=True,
         width=1920,
         height=1080,
         title=f"NetDevOps Survey ({sq.survey_id}) \n {title}",
-        style=netdevops_style_trends,
+        style=Style(
+            colors=colors, 
+            **style_args
+        ),
     )
 
     chart.x_labels = map(str, results.columns)
