@@ -377,3 +377,104 @@ def compare_results_nwk_size(session, sq):
         chart.add(column, list(results[column]))
 
     return chart
+
+def compare_count_distribution(session, q):
+
+    results = get_q_nbr_resp_over_time(session, q)
+
+    # order columns too
+    cols = sorted(list(results.columns))
+    results = results[cols]
+
+    title = q.desc.replace("?", "?\n")
+
+    chart = pygal.Bar(
+        width=1920,
+        height=1080,
+        title=f"NetDevOps Survey \n Number of responses per participant \n {title}",
+        style=Style(colors=COLORS, **style_args),
+    )
+
+    chart.x_labels = map(str, list(results.index))
+
+    for column in list(results.columns):
+        chart.add(column, list(results[column]))
+
+    return chart
+
+def count_distribution(session, sq):
+
+    
+    results = get_sq_nbr_responses_count(
+            session, sq, percentage=True
+        )
+
+    
+    title = sq.text.replace("?", "?\n")
+
+    # nbr_edition = len(list(results.columns))
+    chart = pygal.Bar(
+        width=1920,
+        height=1080,
+        title=f"NetDevOps Survey \n Number of responses per participant \n {title}",
+        style=Style(colors=COLORS, **style_args),
+    )
+
+    chart.show_legend = False
+    chart.x_labels = map(str, list(results.index))
+    chart.add(sq.survey.id, list(results["value"]))
+
+    # chart.x_labels = map(str, list(results.index))
+
+    # for column in list(results.columns):
+    #     chart.add(column, list(results[column]))
+
+    return chart
+
+def bar_graph_tools_sub_answer(session, sq, percentage=True):
+
+    results = get_sq_results(session, sq, percentage=percentage, min_count=2)
+
+    indexes = reorder_index_we_havent(results.index)
+    results = results.reindex(indexes)
+
+    top_answer = results.iloc[-1].name
+
+    # if top_answer != "Ansible":
+    #     logging.warning(f"Top answer is not ansible: {top_answer}")
+
+    sub_results = get_sq_sub_results(session, sq, answer=top_answer, percentage=percentage, min_count=2)
+    # count, avg_r, min_r, max_r = get_sq_stats(session, sq)
+
+    indexes = reorder_index_we_havent(sub_results.index)
+    sub_results = sub_results.reindex(indexes)
+
+    for index in indexes:
+        if "we haven" in index.lower():
+            sub_results = sub_results.rename(index={index: "We haven't automated .."})
+        elif "we are not" in index.lower():
+            sub_results = sub_results.rename(index={index: "We are not .."})
+  
+    if percentage:
+        x_legend = "%"
+    else:
+        x_legend = "count"
+
+    title = sq.text.replace("? ", "?\n")
+    # stats = f"Stats: {avg_r} avg, max {max_r} "
+    intro = f"Sub Responses for all participants who selected '{top_answer}'"
+    chart = pygal.HorizontalBar(
+        legend_at_bottom=False,
+        width=1920,
+        height=1080,
+        title=f"NetDevOps Survey ({sq.survey_id})\n{title}\n{intro}",
+        style=Style(colors=COLORS, **style_args),
+        x_title=x_legend,
+    )
+
+    chart.show_legend = False
+    chart.x_labels = map(str, list(sub_results.index))
+    chart.add(sq.survey.id, list(sub_results["value"]))
+
+    return chart
+    
