@@ -1,7 +1,7 @@
 
 This repository is the home of the Netdevops survey, The goal of this survey is to collect information to understand how network operators and engineers are using automation to operate their network today. 
 
-There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, little is known about the state of “network operations through automation”. This 2nd edition of the Netdevops survey seeks to address that gap, and gather a 2019 snapshot.
+There are numerous surveys available that present how Sysadmin and DevOps professionals manage and deploy servers. In contrast, less is known about the state of “network operations through automation”. This 3rd edition of the Netdevops survey seeks to address that gap, and gather a 2020 snapshot.
 
 # Vendor Neutral and Collaborative
 
@@ -16,23 +16,25 @@ You can sign up and join the Slack community here: http://slack.networktocode.co
 - [2016](https://dgarros.github.io/netdevops-survey/reports/2016)
 - [2019](https://dgarros.github.io/netdevops-survey/reports/2019)
 
-# 2019 Edition
-
-The 2019 Edition is now closed, the results are available in the results folder in TSV format or in a SQLite database 
-
-## Timing
-* August 1st to Oct 9th 2019 : Definition of the questionnaire (github)
-* Oct 10th to Nov 10th 2019: Survey open for response
-* Nov 11th 2019 to Jan 6th 2020 : Cleaning results
-* Jan 7th 2020 : Cleaned results published
+## 2020 Timing
+* September 1st to September 30th : Definition of the questionnaire (github)
+  * Social media blast: Network To Code, Damien, Francois on both LinkedIn and twitter
+  * Directed outreach to partners, asking them to spread the word
+  * Provide, review and incorporate feedback / PRs to questionnaire
+  * Build detailed marketing plan
+  * Reach out to marketing partners
+* Oct 1st to October 23rd : Survey open for response
+  * Execute marketing plan
+* October 24th to November 30th : Results cleanup
+* December 3rd : Results publication
 
 ## Core Team
 * Francois Caen
 * Damien Garros
 
-# 2016 Edition
+# Previous Editions
 
-The first edition of the netdevops survey took place in Fall 2016
+Previous editions of the netdevops survey took place in Fall 2016 and 2019.
 * The raw results are available in the results folder in TSV format or in a SQLite database 
 
 ## Core Team
