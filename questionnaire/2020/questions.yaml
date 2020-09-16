@@ -236,21 +236,6 @@
     - We are not using virtual network devices for training or qualification
     - Other (text field)
 
-  - title: On the server side, what automation tools are you using ?
-    type: Multiple choice 
-    id: env-server-automation
-    responses:
-    - Ansible
-    - Chef
-    - Puppet
-    - SaltStack
-    - CF Engine
-    - RunDeck
-    - Vendor Specific
-    - Microsoft SCCM
-    - We don't have automation for servers
-    - Other (text field)
-  
   - title: Where are you located?
     type: Single choice 
     id: env-location
