@@ -221,7 +221,7 @@
     responses:
     - CLI
     - Netconf
-    - Retconf
+    - Restconf
     - gNMI
     - gRPC
     - HTTP/HTTPS
