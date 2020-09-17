@@ -258,6 +258,21 @@
     - use open source with support
     - no prefered approach, varies on case by case
 
+  - title: What is your primary role within your organization?
+    type: Single choice
+    id: role
+    responses:
+    - Network Administrator / Operator
+    - Network Architect / Engineer
+    - Network Automation Engineer
+    - Software Engineer / Developer
+    - Cloud Engineer
+    - System Administrator
+    - Project or Program Manager
+    - IT Manager / Decision Maker
+    - Sales or Presales
+    - Consultant
+
 # ----------------------------------------------------
 - section: TRANSITION TO NETWORK AUTOMATION
   questions:
