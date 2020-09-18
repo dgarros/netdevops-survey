@@ -293,6 +293,15 @@
     - 2 to 5 years 
     - More than 5 years
 
+  - title: Does your IT organization have formal and/or sponsored initiatives in place to expand and improve the use of automation on the network?
+    type: Single choice 
+    id: leadership-support
+    responses:
+    - Yes, this is critical to the IT leadership strategy and we have an active investment (proactive)
+    - Yes, but we are not seeing real investment (reactive)
+    - No, our leadership is not formally investing in automation, but I am to get my job done (neutral)
+    - No, the leadership is against the introduction of automation. (against)
+
   - title: What actions did your team take to transition to network automation
     type: Multiple choice
     id: transition-team-actions
