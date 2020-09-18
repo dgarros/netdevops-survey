@@ -212,6 +212,19 @@
     - A little
     - A lot
 
+  - title: What connection methods / transports are being utilized as part of your network automation implementation?
+    type: Multiple choice 
+    id: transport-protocol
+    responses:
+    - CLI/SSH
+    - Netconf
+    - Restconf
+    - gNMI/gRPC
+    - HTTP/HTTPS
+    - Serial Console
+    - Not sure
+    - Other (text field)
+
   - title: Which solution are you using to run virtual network devices for training or qualification purpose?
     type: Multiple choice 
     id: env-virtual-network
