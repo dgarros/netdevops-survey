@@ -219,13 +219,12 @@
     type: Multiple choice 
     id: transport-protocol
     responses:
-    - CLI
+    - CLI/SSH
     - Netconf
     - Restconf
-    - gNMI
-    - gRPC
+    - gNMI/gRPC
     - HTTP/HTTPS
-    - Console
+    - Serial Console
     - Not sure
     - Other (text field)
 
