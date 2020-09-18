@@ -15,7 +15,7 @@
     type: Multiple choice 
     id: operation-automated
     responses:
-    - Day 0 Provisioning using a vendor solution (ZTP, POAP, Amnesiac, etc.)
+    - Day 0 Provisioning using a vendor solution (ZTP, PnP, POAP, Amnesiac, etc.)
     - Configuration generation
     - Configuration deployment
     - Configuration archiving
@@ -134,7 +134,7 @@
     - sFlow/Netflow
     - Routing Information
     - API
-    - Streaming Telemetry
+    - Streaming / Model-Driven Telemetry
 
   - title: Anomaly detection – What mechanism are you using to identify problems in your network ? 
     type: Multiple choice
@@ -161,25 +161,33 @@
     - 10001-50000
     - 50001+
 
-  - title: Which networking vendor devices are you managing?
+  - title: Which vendor devices are you managing?
     type: Multiple choice 
     id: env-vendors
     responses:
+    - Amazon AWS
     - Arista
     - Big Switch
-    - Extreme Networks (brocade)
-    - Cisco IOS/IOS XE
-    - Cisco NX-OS/ACI
+    - Checkpoint
+    - Ciena
+    - Cisco ASA/Firepower
+    - Cisco IOS/IOS XE/Viptela
     - Cisco IOS XR
+    - Cisco Meraki
+    - Cisco NX-OS/ACI
     - Cumulus
     - Dell/EMC
+    - Extreme Networks (brocade)
+    - F5
+    - Fortinet
+    - Google GCP
     - Juniper
     - HPE
     - Huawei
-    - VMWare
-    - Google GCP
-    - Amazon AWS
     - Microsoft Azure
+    - Nokia
+    - Palo Alto
+    - VMWare
     - Other…
 
   - title: What types of environments are you managing?
