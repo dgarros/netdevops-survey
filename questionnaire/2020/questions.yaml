@@ -146,6 +146,15 @@
     - Proactive monitoring data analysis using AI/ML
     - We haven’t automated the detection of anomaly
 
+  - title: Source of Truth – How are you organizing configuration data and/or inventory ? 
+    type: Multi choice
+    id: sot-how
+    - Jinja or similar templates
+    - Key-value pairs as text, JSON, YAML etc
+    - Data in a locally managed data model
+    - The devices themselves provide the source of truth (we must pull facts first before config changes)
+    - We aren't
+
 # ----------------------------------------------------
 - section: YOUR ENVIRONMENT
   questions:
