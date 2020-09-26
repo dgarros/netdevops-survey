@@ -37,12 +37,12 @@
     - FTP/SCP/TFTP
     - Rancid/Oxidized
     - Vendor specific tools
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
+    - Internally developed scripts
     - Solarwind NCM
     - HPE Network Automation (HP NA)
     - Microsoft Excel
     - Kiwi CatTools
+    - Another open source project (not listed above)
     - We are not keeping track of that
     - Other (text field)
   
@@ -72,10 +72,10 @@
     - Nornir
     - NAPALM
     - HPE Network Automation (HP NA)
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
+    - Internally developed scripts
     - Controller (ODL, DNAC, NSX, OpenContrail...)
     - Network vendor specific tools (CVP, Space, PI ...)
+    - Another open source project (not listed above)
     - We haven’t automated the generation or deployment of our configurations
     - Other (text field)
 
@@ -98,13 +98,13 @@
     responses:
     - Ansible
     - SaltStack
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
+    - Internally developed scripts
     - Solarwind NCM
     - HPE Network Automation (HP NA)
     - NSO (Tail-F)
     - Nornir
     - Network vendor specific tools (DNAC, CVP, Space, PI ...)
+    - Another open source project (not listed above)
     - We haven’t automated software upgrades
     - Other (text field)
 
@@ -116,9 +116,9 @@
     - Robot Framework / Behave
     - SaltStack
     - NSO (Tail-F)
-    - Low level custom scripts (Python paramiko/socket)
-    - Custom scripts using common libraries (netmiko/napalm)
+    - Internally developed scripts
     - Network vendor specific tools (DNAC, CVP, Space, PI ...)
+    - Another open source project (not listed above)
     - We haven’t automated software qualification
     - Other (text field)
 
