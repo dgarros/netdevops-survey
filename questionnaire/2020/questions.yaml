@@ -146,6 +146,26 @@
     - Proactive monitoring data analysis using AI/ML
     - We haven’t automated the detection of anomaly
 
+  - title: Source of Truth – Do you have a Source of Truth ?
+    type: Single choice
+    id: sot-present
+    responses:
+    - Yes, we have one or multiple source of data that are accurately representing the network
+    - Partially, we are trying to maintain some source of data but there is always a drift with the real network
+    - No, the configurations of our network devices is our only accurate source of information
+
+  - title: Source of Truth – If you have a Source of Truth where are you storing your data ?
+    type: Multi choice
+    id: sot-where
+    responses:
+    - Spreadsheet
+    - An Entreprise CMDB (ServiceNow)
+    - An IPAM (Infoblox, Netbox)
+    - A DCIM (Netbox, Device 42)
+    - Source Control (GitHub, GitLab, etc)
+    - Database implementation
+    - We don’t have a source of truth
+
 # ----------------------------------------------------
 - section: YOUR ENVIRONMENT
   questions:
