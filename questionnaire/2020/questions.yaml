@@ -248,7 +248,7 @@
     - Netconf
     - Restconf
     - gNMI/gRPC
-    - HTTP/HTTPS
+    - HTTP/HTTPS (Non-Restconf)
     - Serial Console
     - Not sure
     - Other (text field)
