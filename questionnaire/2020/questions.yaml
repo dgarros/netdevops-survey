@@ -406,7 +406,7 @@
     id: trend-tools
     responses: 
     - { text: Ansible, id: ansible }
-    - { text: Terraformm, id: terraform }
+    - { text: Terraform, id: terraform }
     - { text: Saltstack, id: saltstack }
     - { text: NAPALM, id: napalm }
     - { text: Nornir, id: nornir }
