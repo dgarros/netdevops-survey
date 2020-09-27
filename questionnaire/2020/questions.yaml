@@ -99,7 +99,6 @@
     responses:
     - Ansible
     - SaltStack
-    - Terraform
     - Internally developed scripts
     - Solarwind NCM
     - HPE Network Automation (HP NA)
@@ -115,7 +114,6 @@
     id: software-validation
     responses:
     - Ansible
-    - Terraform
     - Robot Framework / Behave
     - SaltStack
     - NSO (Tail-F)
