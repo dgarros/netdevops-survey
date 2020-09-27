@@ -71,6 +71,7 @@
     - NSO (Tail-F)
     - Nornir
     - NAPALM
+    - Terraform
     - HPE Network Automation (HP NA)
     - Internally developed scripts
     - Controller (ODL, DNAC, NSX, OpenContrail...)
@@ -98,6 +99,7 @@
     responses:
     - Ansible
     - SaltStack
+    - Terraform
     - Internally developed scripts
     - Solarwind NCM
     - HPE Network Automation (HP NA)
@@ -113,6 +115,7 @@
     id: software-validation
     responses:
     - Ansible
+    - Terraform
     - Robot Framework / Behave
     - SaltStack
     - NSO (Tail-F)
