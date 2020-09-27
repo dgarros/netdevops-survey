@@ -148,7 +148,7 @@
 
   - title: Telemetry – What system are you using to collect telemetry information from your network ? 
     type: Multiple choice
-    id: telemetry-tool
+    id: telemetry-collect
     responses:
     - Telegraf - SNMP
     - Telegraf - gNMI
@@ -167,7 +167,7 @@
 
   - title: Telemetry – What system are you using to store & visualize telemetry information from your network ? 
     type: Multiple choice
-    id: telemetry-tool
+    id: telemetry-store
     responses:
     - InfluxDB
     - Prometheus
