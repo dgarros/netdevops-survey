@@ -146,6 +146,43 @@
     - Proactive monitoring data analysis using AI/ML
     - We haven’t automated the detection of anomaly
 
+  - title: Telemetry – What system are you using to collect telemetry information from your network ? 
+    type: Multiple choice
+    id: telemetry-tool
+    responses:
+    - Telegraf - SNMP
+    - Telegraf - gNMI
+    - Telegraf - Exec/Execd
+    - SNMP Exporter
+    - BlackBox Exporter
+    - Node Exporter
+    - Logstash
+    - Beats
+    - Panoptes
+    - Kafka
+    - Internally developed collector
+    - Another open source project (not listed above)
+    - Network vendor specific collector
+    - We are using a traditional Network Monitoring solution
+
+  - title: Telemetry – What system are you using to store & visualize telemetry information from your network ? 
+    type: Multiple choice
+    id: telemetry-tool
+    responses:
+    - InfluxDB
+    - Prometheus
+    - Elasticsearch
+    - Timescale
+    - Clickhouse
+    - OpenTSDB
+    - Druid
+    - Splunk
+    - Kentik
+    - Grafana
+    - Kibana
+    - Network vendor specific tools (CVP/Tetration ..)
+    - We are using a traditional Network Monitoring solution
+
   - title: Source of Truth – Do you have a Source of Truth ?
     type: Single choice
     id: sot-present
