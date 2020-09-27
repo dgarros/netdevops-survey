@@ -62,6 +62,30 @@ def get_sq_results(
         return df
 
 
+def get_sr_ids_group_by_answer(session, sq):
+    """
+    Return a list of SurveyResponse ids group_by Answer of a specific SurveyQuestions
+    """
+    
+    groups = {}
+
+    # Collect responses from SQ2 to build Groups
+    # For each valid response, get a list of surveyresponse_id
+    sq_res = (
+        session.query(Choices.desc, QuestionResponses.surveyresponse_id)
+        .join(Choices)
+        .filter(QuestionResponses.survey_question == sq)
+        .all()
+    )
+
+    for r in sq_res:
+        if r[0] not in groups:
+            groups[r[0]] = dict(ids=list())
+        groups[r[0]]["ids"].append(r[1])
+    
+    return groups
+
+
 def get_sq_results_group_by_sq(session, sq1, sq2, percentage=True) -> DataFrame:
     """
     Get Results for a given SurveyQuestion group by the responses from a second SurveyQuestion
@@ -71,21 +95,7 @@ def get_sq_results_group_by_sq(session, sq1, sq2, percentage=True) -> DataFrame:
     Return the results as a pandas DataFrame with one column per group
     """
 
-    groups = {}
-
-    # Collect responses from SQ2 to build Groups
-    # For each valid response, get a list of surveyresponse_id
-    sq2_res = (
-        session.query(Choices.desc, QuestionResponses.surveyresponse_id)
-        .join(Choices)
-        .filter(QuestionResponses.survey_question == sq2)
-        .all()
-    )
-
-    for r in sq2_res:
-        if r[0] not in groups:
-            groups[r[0]] = dict(ids=list(), df=None)
-        groups[r[0]]["ids"].append(r[1])
+    groups = get_sr_ids_group_by_answer(session, sq2)
 
     # For each group, get the results for SQ1 and save the result in a DataFrame
     for group_name, group in groups.items():
@@ -198,3 +208,96 @@ def get_sq_stats(session, sq):
     max_responses = max(responses)
 
     return (nbr_responses, round(avg_responses, 2), min_responses, max_responses)
+
+
+def get_sq_nbr_responses_count(session, sq, percentage=True) -> DataFrame:
+    """
+    Return the number of responses per count number for a given 
+    Multi choice SurveyQuestions
+
+    Return the results as a pandas DataFrame with one column called "value"
+    """
+
+    res = (
+        session.query(func.count(QuestionResponses.choice_id))
+        .filter(QuestionResponses.survey_question == sq)
+        .group_by(QuestionResponses.surveyresponse_id)
+        .all()
+    )
+
+    nbr_responses = len(res)
+
+    counts = defaultdict(int)
+
+    for r in res:
+        counts[r] += 1
+    
+    if percentage:
+        df= pd.DataFrame({"value": [round((v / nbr_responses) * 100, 3) for v in list(counts.values())]}, index=counts.keys())
+    else: 
+        df= pd.DataFrame({"value": list(counts.values())}, index=counts.keys())
+
+    return df.sort_index()
+
+def get_q_nbr_resp_over_time(session, q) -> DataFrame:
+
+    sqs = session.query(SurveyQuestions).filter(SurveyQuestions.question == q).all()
+
+    responses = {}
+    for sq in sqs:
+        responses[sq.survey_id] = get_sq_nbr_responses_count(
+            session, sq, percentage=True
+        )
+
+    # Combine all the dataframe together
+    dfs = [r for r in responses.values()]
+    df = pd.concat(dfs, axis=1, sort=True)
+    df.columns = list(responses.keys())
+
+    return df
+
+
+def get_sq_sub_results(session, sq, answer, percentage=False, min_count=2, sort=True) -> DataFrame:
+    """
+    Get Results Sub-Results of a SurveyQuestions for a given answer. 
+    The idea is to understand what tools are used together, especially in a Multi choice question
+    Example:
+        Get the results to a SurveyQuestions only for the participants who also selected "Ansible"
+
+    Return the results as a pandas DataFrame with one column called "value"
+    """
+
+    groups = get_sr_ids_group_by_answer(session, sq)
+
+    if answer not in groups.keys():
+        raise Exception("answer not present")
+
+    res = (
+            session.query(Choices.desc, func.count(QuestionResponses.choice_id))
+            .join(Choices)
+            .filter(
+                QuestionResponses.survey_question == sq,
+                QuestionResponses.surveyresponse_id.in_(tuple(groups[answer]["ids"])),
+                Choices.desc != answer
+            )
+            .group_by(QuestionResponses.choice_id)
+            .all()
+        )
+
+    if min_count:
+        res = [r for r in res if r[1] >= min_count]
+
+    labels = [r[0] for r in res]
+
+    if percentage:
+        count = len(groups[answer]["ids"])
+        values = {"value": [round((r[1] / count) * 100, 3) for r in res]}
+    else:
+        values = {"value": [r[1] for r in res]}
+
+    df = pd.DataFrame(values, index=labels)
+  
+    if sort:
+        return df.sort_values("value")
+    else:
+        return df
