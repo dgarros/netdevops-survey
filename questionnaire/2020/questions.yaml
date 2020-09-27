@@ -390,7 +390,10 @@
     - { text: Intent-based solution / IBN, id: ibns }
     - { text: Source of Truth, id: sot }
     - { text: Graph Database, id: graph-db }
-    - { text: Network Health Monitoring, id: network-health } 
+    - { text: "Network Verification Software (Batfish/Forward Networks/Veriflow/etc.)", id: network-verification }
+    - { text: "Keyword based testing (RobotFramework/Behave/etc.)", id: keyword-testing }
+    - { text: "CI (jenkins/travis-ci/circle-ci/gitlab-ci/etc.)", id: ci }
+    - { text: Network Health Monitoring, id: network-health }
     options:
     - I don't know
     - No interest
@@ -403,19 +406,22 @@
     id: trend-tools
     responses: 
     - { text: Ansible, id: ansible }
+    - { text: Terraformm, id: terraform }
     - { text: Saltstack, id: saltstack }
     - { text: NAPALM, id: napalm }
     - { text: Nornir, id: nornir }
     - { text: Netbox, id: netbox }
     - { text: ELK (Logstash/Kibana), id: elk }
-    - { text: Grafana/Prometheus/Influxdb, id: tsdb }
+    - { text: Grafana, id: grafana }
+    - { text: Prometheus, id: prometheus }
+    - { text: Influxdb, id: influxdb }
     - { text: Kentik, id: kentik }
     - { text: NSO (tail-F), id: nso }
     - { text: Git (github/gitlab), id: git }
-    - { text: "Network Verification Software (Batfish, Forward Networks, Veriflow ..)", id: network-verification }
-    - { text: "Keyword based testing (RobotFramework, Behave)", id: keyword-testing }
-    - { text: "CI (jenkins, travis-ci, circle-ci, gitlab-ci)", id: ci }
     - { text: Stackstorm, id: stackstorm }
+    - { text: GNS3, id: gns3 }
+    - { text: EVE-NG, id: eve-ng }
+    
     options:
     - I don't know
     - No interest
