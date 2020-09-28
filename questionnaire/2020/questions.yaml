@@ -244,7 +244,7 @@
     type: Multiple choice 
     id: transport-protocol
     responses:
-    - CLI/SSH
+    - CLI/SSH (Non-Netconf)
     - Netconf
     - Restconf
     - gNMI/gRPC
