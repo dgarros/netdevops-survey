@@ -295,6 +295,18 @@
     - use open source with support
     - no prefered approach / varies on case by case
 
+  - title: What business or cultural issues prevent your organization from automating more aspects of the network?
+    type: Multi choice
+    id: culture-blocker
+    responses:
+    - Time
+    - Budget
+    - Fear / Distrust of automation
+    - Fear of layoffs / redundancy
+    - Poor leadership / no automation strategy
+    - Skills Gap
+    - Security concerns
+
   - title: What is your primary role within your organization?
     type: Single choice
     id: role
