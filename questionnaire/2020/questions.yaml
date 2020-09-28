@@ -465,9 +465,7 @@
     - { text: Grafana, id: grafana }
     - { text: Prometheus, id: prometheus }
     - { text: Influxdb, id: influxdb }
-    - { text: Kentik, id: kentik }
     - { text: NSO (tail-F), id: nso }
-    - { text: Git (github/gitlab), id: git }
     - { text: Stackstorm, id: stackstorm }
     - { text: GNS3, id: gns3 }
     - { text: EVE-NG, id: eve-ng } 
