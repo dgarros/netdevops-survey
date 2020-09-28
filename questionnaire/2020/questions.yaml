@@ -470,7 +470,9 @@
     - { text: Git (github/gitlab), id: git }
     - { text: Stackstorm, id: stackstorm }
     - { text: GNS3, id: gns3 }
-    - { text: EVE-NG, id: eve-ng }
+    - { text: EVE-NG, id: eve-ng } 
+    - { text: CML, id: cml }
+
     
     options:
     - I don't know
