@@ -375,9 +375,9 @@
     type: Single choice 
     id: leadership-support
     responses:
-    - Yes - this is critical to the IT leadership strategy and we have an active investment (proactive)
+    - Yes - this is critical to the IT leadership strategy and we have active investment (proactive)
     - Yes - but we are not seeing real investment (reactive)
-    - No - our leadership is not formally investing in automation - but I am to get my job done (neutral)
+    - No - our leadership is not formally investing in automation - but this remains a grassroots effort (neutral)
     - No - the leadership is against the introduction of automation. (against)
 
   - title: What actions did your team take to transition to network automation
