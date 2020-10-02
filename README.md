@@ -11,20 +11,17 @@ Everyone is welcome to participate in the definition of the questionnaire and th
 Questions and feedback can be provided via Github issue or via the NetworkToCode Slack channel. 
 You can sign up and join the Slack community here: http://slack.networktocode.com/
 
-# Reports
+# 2020 Survey open!
+Please take a few minutes and participate in the [2020 Edition](http://bit.ly/netdevops-survey-2020)
+
+# Past Reports
 
 - [2016](https://dgarros.github.io/netdevops-survey/reports/2016)
 - [2019](https://dgarros.github.io/netdevops-survey/reports/2019)
 
 ## 2020 Timing
 * September 1st to September 30th : Definition of the questionnaire (github)
-  * Social media blast: Network To Code, Damien, Francois on both LinkedIn and twitter
-  * Directed outreach to partners, asking them to spread the word
-  * Provide, review and incorporate feedback / PRs to questionnaire
-  * Build detailed marketing plan
-  * Reach out to marketing partners
 * Oct 1st to October 23rd : Survey open for response
-  * Execute marketing plan
 * October 24th to November 30th : Results cleanup
 * December 3rd : Results publication
 
