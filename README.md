@@ -21,8 +21,8 @@ Please take a few minutes and participate in the [2020 Edition](http://bit.ly/ne
 
 ## 2020 Timing
 * September 1st to September 30th : Definition of the questionnaire (github)
-* Oct 1st to October 23rd : Survey open for response
-* October 24th to November 30th : Results cleanup
+* Oct 1st to October 30th : Survey open for response
+* October 31st to November 30th : Results cleanup
 * December 3rd : Results publication
 
 ## Core Team
