@@ -15,11 +15,8 @@ limitations under the License.
 from collections import defaultdict
 
 from .schema import (
-    Surveys,
-    Questions,
     QuestionResponses,
     SurveyQuestions,
-    SurveyResponses,
     Choices,
     Base,
 )
@@ -29,9 +26,7 @@ from pandas import DataFrame
 import pandas as pd
 
 
-def get_sq_results(
-    session, sq, percentage=False, sort=True, min_count=None
-) -> DataFrame:
+def get_sq_results(session, sq, percentage=False, sort=True, min_count=None) -> DataFrame:
     """
     Get the number of occurrence per response for a given SurveyQuestion
 
@@ -132,9 +127,7 @@ def get_q_results_over_time(session, question, sqs=None, lowercase_index=False, 
 
     responses = {}
     for sq in sqs:
-        responses[sq.survey_id] = get_sq_results(
-            session, sq, percentage=percentage, min_count=min_count
-        )
+        responses[sq.survey_id] = get_sq_results(session, sq, percentage=percentage, min_count=min_count)
         if lowercase_index:
             responses[sq.survey_id].index = responses[sq.survey_id].index.str.lower()
 
@@ -151,13 +144,11 @@ def get_q_results_over_time(session, question, sqs=None, lowercase_index=False, 
     return df.fillna(0)
 
 
-def get_gsq_results(
-    session, gsq: SurveyQuestions, percentage=True, order_by=None
-) -> DataFrame:
+def get_gsq_results(session, gsq: SurveyQuestions, percentage=True, order_by=None) -> DataFrame:
     """
     Get results for a SurveyQuestions of type Multiple choice Grid
 
-    Return the result as a pandas DataFrame will one option per column 
+    Return the result as a pandas DataFrame will one option per column
     """
     sqs = session.query(SurveyQuestions).filter_by(parent_id=gsq.id).all()
 
@@ -207,7 +198,7 @@ def get_sq_stats(session, sq):
 
 def get_sq_nbr_responses_count(session, sq, percentage=True) -> DataFrame:
     """
-    Return the number of responses per count number for a given 
+    Return the number of responses per count number for a given
     Multi choice SurveyQuestions
 
     Return the results as a pandas DataFrame with one column called "value"
@@ -226,13 +217,16 @@ def get_sq_nbr_responses_count(session, sq, percentage=True) -> DataFrame:
 
     for r in res:
         counts[r] += 1
-    
+
     if percentage:
-        df= pd.DataFrame({"value": [round((v / nbr_responses) * 100, 3) for v in list(counts.values())]}, index=counts.keys())
-    else: 
-        df= pd.DataFrame({"value": list(counts.values())}, index=counts.keys())
+        df = pd.DataFrame(
+            {"value": [round((v / nbr_responses) * 100, 3) for v in list(counts.values())]}, index=counts.keys()
+        )
+    else:
+        df = pd.DataFrame({"value": list(counts.values())}, index=counts.keys())
 
     return df.sort_index()
+
 
 def get_q_nbr_resp_over_time(session, question, sqs=None) -> DataFrame:
 
@@ -241,9 +235,7 @@ def get_q_nbr_resp_over_time(session, question, sqs=None) -> DataFrame:
 
     responses = {}
     for sq in sqs:
-        responses[sq.survey_id] = get_sq_nbr_responses_count(
-            session, sq, percentage=True
-        )
+        responses[sq.survey_id] = get_sq_nbr_responses_count(session, sq, percentage=True)
 
     # Combine all the dataframe together
     dfs = [r for r in responses.values()]

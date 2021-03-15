@@ -1,4 +1,3 @@
-
 """
 (c) 2019 Damien Garros
 
@@ -17,22 +16,15 @@ import sys
 import base64
 import math
 import logging
-from collections import OrderedDict
 
 import pandas as pd
 import click
-import pygal
-from pygal.style import CleanStyle, Style
-from sqlalchemy.orm import relationship, sessionmaker
-from sqlalchemy import create_engine, func
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 from .schema import (
-    Surveys,
     Questions,
-    QuestionResponses,
     SurveyQuestions,
-    SurveyResponses,
-    Choices,
     Base,
 )
 from .query import *
@@ -111,10 +103,10 @@ def count_responses(datas):
     return pd.DataFrame(values, index=labels).sort_values(0, ascending=False)
 
 
-
 @click.group()
 def main():
     pass
+
 
 @click.option("--survey", type=int)
 @click.option("--question", type=str)
@@ -141,10 +133,10 @@ def analyze_tsv(survey, question):
     df = pd.concat(dfs, axis=1, sort=True)
     df.columns = list(responses.keys())
 
-    pd.set_option('display.max_rows', None)
-    pd.set_option('display.max_columns', None)
-    pd.set_option('display.width', None)
-    pd.set_option('display.max_colwidth', None)
+    pd.set_option("display.max_rows", None)
+    pd.set_option("display.max_columns", None)
+    pd.set_option("display.width", None)
+    pd.set_option("display.max_colwidth", None)
 
     # df.set_option('display.max_rows', None)
     # df.set_option('display.max_columns', None)
@@ -159,8 +151,8 @@ def analyze_tsv(survey, question):
 @click.option("--db", type=str, default="./results/netdevops_survey.sqlite3")
 @click.option("--out", type=str, default="./results")
 @click.option("--prefix", type=str, default="netdevops_survey")
-@click.option('--yoy/--no-yoy', default=True, is_flag=True)
-@click.option('--single/--no-single', default=True, is_flag=True)
+@click.option("--yoy/--no-yoy", default=True, is_flag=True)
+@click.option("--single/--no-single", default=True, is_flag=True)
 @main.command()
 def generate_graphs(survey, debug_mode, db, out, prefix, yoy, single):
 
@@ -186,22 +178,24 @@ def generate_graphs(survey, debug_mode, db, out, prefix, yoy, single):
 
         for survey in surveys:
 
-            sq = session.query(SurveyQuestions).filter(
-                    SurveyQuestions.question == question,
-                    SurveyQuestions.survey_id == survey
-                ).first()
+            sq = (
+                session.query(SurveyQuestions)
+                .filter(SurveyQuestions.question == question, SurveyQuestions.survey_id == survey)
+                .first()
+            )
 
-            if not sq: 
+            if not sq:
                 continue
 
             # -------------------------------------------------------------------
             # Single SQ Graphs
             # -------------------------------------------------------------------
             if single:
-                sq = session.query(SurveyQuestions).filter(
-                        SurveyQuestions.question == question,
-                        SurveyQuestions.survey_id == survey
-                    ).first()
+                sq = (
+                    session.query(SurveyQuestions)
+                    .filter(SurveyQuestions.question == question, SurveyQuestions.survey_id == survey)
+                    .first()
+                )
 
                 if question.type == "Multiple choice grid" and "trend" in question.id:
 
@@ -277,19 +271,20 @@ def generate_graphs(survey, debug_mode, db, out, prefix, yoy, single):
             # -------------------------------------------------------------------
             if yoy:
 
-                yoy_surveys = ALL_SURVEYS[0:ALL_SURVEYS.index(survey)+1]
+                yoy_surveys = ALL_SURVEYS[0 : ALL_SURVEYS.index(survey) + 1]
 
                 if len(yoy_surveys) == 1:
                     logging.debug("Skipping YoY graphs for %s because there is nothing to compare with", survey)
                     continue
 
-                sqs = session.query(SurveyQuestions).filter(
-                        SurveyQuestions.question == question,
-                        SurveyQuestions.survey_id.in_(yoy_surveys)
-                    ).all()
+                sqs = (
+                    session.query(SurveyQuestions)
+                    .filter(SurveyQuestions.question == question, SurveyQuestions.survey_id.in_(yoy_surveys))
+                    .all()
+                )
 
                 if question.type == "Multiple choice" and len(sqs) > 1:
-                    
+
                     chart = compare_results_over_time_hbar(session, question, sqs=sqs)
                     filename = f"{prefix}_{survey}_{question.id}_compare"
                     out_dir = f"{out}/{survey}"
@@ -313,11 +308,11 @@ def generate_graphs(survey, debug_mode, db, out, prefix, yoy, single):
 
 
 @click.option("--survey", type=int)
-@click.option('--debug', default=False, is_flag=True)
-@click.option('--load-question', "loadquestion", default=False, is_flag=True)
-@click.option('--load-response', "loadresponse", default=False, is_flag=True)
-@click.option('--init', default=False, is_flag=True)
-@click.option("--db", type=str,  default="./results/netdevops_survey.sqlite3")
+@click.option("--debug", default=False, is_flag=True)
+@click.option("--load-question", "loadquestion", default=False, is_flag=True)
+@click.option("--load-response", "loadresponse", default=False, is_flag=True)
+@click.option("--init", default=False, is_flag=True)
+@click.option("--db", type=str, default="./results/netdevops_survey.sqlite3")
 @main.command()
 def database(survey, debug, loadquestion, loadresponse, init, db):
 

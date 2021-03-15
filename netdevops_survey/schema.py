@@ -12,7 +12,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from sqlalchemy import Column, ForeignKey, Integer, String, DateTime, Table
+from sqlalchemy import Column, ForeignKey, Integer, String, Table
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -50,8 +50,8 @@ class Questions(Base):
     A Question can be of Type:
       - Single choice
       - Multiple choice
-      - Multiple choice grid 
-    Since a `Multiple choice grid` is a group of single choice question, 
+      - Multiple choice grid
+    Since a `Multiple choice grid` is a group of single choice question,
     it's possible for Questions to be related to eachother in a parent/child relationship
     """
 
@@ -74,7 +74,7 @@ class Questions(Base):
 class SurveyQuestions(Base):
     """
     Collection of SurveyQuestion.
-    A SurveyQuestion is the implementation of a specific question in a Survey. 
+    A SurveyQuestion is the implementation of a specific question in a Survey.
     The Role of a SurveyQuestion is to track, the specificty of a question in each survey.
     The title of 2 SurveyQuestions can be different between 2 differents surveys
     The responses associated with a question can be different too between 2 differents surveys
@@ -92,9 +92,7 @@ class SurveyQuestions(Base):
     question = relationship(Questions)
     parent = relationship("SurveyQuestions")
 
-    choices = relationship(
-        "Choices", secondary=question_choices, back_populates="survey_questions"
-    )
+    choices = relationship("Choices", secondary=question_choices, back_populates="survey_questions")
 
     def __repr__(self):
         return f"SurveyQuestion '{self.survey_id}::{self.question_id}''"
@@ -111,9 +109,7 @@ class Choices(Base):
     id = Column(Integer, primary_key=True)
     desc = Column(String(250), nullable=False)
 
-    survey_questions = relationship(
-        "SurveyQuestions", secondary=question_choices, back_populates="choices"
-    )
+    survey_questions = relationship("SurveyQuestions", secondary=question_choices, back_populates="choices")
 
     def __repr__(self):
         return f"Choice '{self.desc}' ({self.id})"

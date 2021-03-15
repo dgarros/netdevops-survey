@@ -26,7 +26,7 @@ TRENDS_COLOR = ("#E39A48", "#C9CAC9", "#77C780", "#00B814", "#067512")
 LANGUAGE_COLOR = ("#E39A48", "#77C780", "#067512")
 
 # COLORS = ("#2589BD", "#A39171", "#86BAA1", "#FFCF56", "#38686A", "#00635D", "#6D9DC5", "#A3B4A2")
-COLORS = ( "#009E73", "#E69F00", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
+COLORS = ("#009E73", "#E69F00", "#56B4E9", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
 
 style_args = dict(
     label_font_size=28,
@@ -42,14 +42,13 @@ netdevops_style_trends = Style(colors=TRENDS_COLOR, **style_args)
 netdevops_style_language = Style(colors=TRENDS_COLOR, **style_args)
 
 
-
 def reorder_index_we_havent(indexes):
     """
-    In a list of indexes, search for a string that start with either 
+    In a list of indexes, search for a string that start with either
         we haven or we are not
     and move it at the top of the list
 
-    Return: 
+    Return:
     List if indexes
     """
     tmp = list(indexes)
@@ -81,10 +80,10 @@ def generate_graph(chart, filename, out_dir="./results"):
 
 def stacked_graph_gsq(session, sq, results_order=None):
     """
-    Generate HorizontalStackedBar graphs 
+    Generate HorizontalStackedBar graphs
     for a Survey Question of type `Multiple choice grid`
 
-    if results_order is provided, the results will be display in this order 
+    if results_order is provided, the results will be display in this order
     """
 
     results = get_gsq_results(session, sq, percentage=True)
@@ -118,10 +117,7 @@ def stacked_graph_gsq(session, sq, results_order=None):
         width=1920,
         height=1080,
         title=f"NetDevOps Survey ({sq.survey_id}) \n {title}",
-        style=Style(
-            colors=colors, 
-            **style_args
-        ),
+        style=Style(colors=colors, **style_args),
     )
 
     chart.x_labels = map(str, results.columns)
@@ -179,7 +175,7 @@ def bar_graph_tools(session, sq, percentage=True):
             results = results.rename(index={index: "We haven't automated .."})
         elif "we are not" in index.lower():
             results = results.rename(index={index: "We are not .."})
-  
+
     if percentage:
         x_legend = "%"
     else:
@@ -259,7 +255,6 @@ def compare_results_over_time_hbar(session, question, sqs=None, results_order=No
             results = results.rename(index={index: "We haven't automated .."})
         elif "we are not" in index.lower():
             results = results.rename(index={index: "We are not .."})
-  
 
     title = question.desc.replace("?", "?\n")
 
@@ -304,7 +299,8 @@ def compare_results_over_time_sbar(session, question, sqs=None, results_order=No
             results = results.reindex(order_lower, axis=0)
         except Exception as exc:
             logging.warning("Unable to apply reindex for results_over_time_sbar ")
-            import pdb 
+            import pdb
+
             pdb.set_trace()
 
         results = results.sort_values(by=order_lower[-1], axis=1)
@@ -324,7 +320,7 @@ def compare_results_over_time_sbar(session, question, sqs=None, results_order=No
         legend_at_bottom=True,
         stack_from_top=True,
         width=1920,
-        height=320+nbr_edition*160,
+        height=320 + nbr_edition * 160,
         title=f"NetDevOps Survey \n {title}",
         style=netdevops_style_trends,
     )
@@ -378,6 +374,7 @@ def compare_results_nwk_size(session, sq):
 
     return chart
 
+
 def compare_count_distribution(session, question, sqs=None):
 
     results = get_q_nbr_resp_over_time(session, question, sqs=sqs)
@@ -402,14 +399,11 @@ def compare_count_distribution(session, question, sqs=None):
 
     return chart
 
+
 def count_distribution(session, sq):
 
-    
-    results = get_sq_nbr_responses_count(
-            session, sq, percentage=True
-        )
+    results = get_sq_nbr_responses_count(session, sq, percentage=True)
 
-    
     title = sq.text.replace("?", "?\n")
 
     # nbr_edition = len(list(results.columns))

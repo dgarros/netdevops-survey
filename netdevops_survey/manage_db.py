@@ -19,7 +19,6 @@ import logging
 import yaml
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 
 from .schema import *
 
@@ -31,9 +30,7 @@ def load_question(survey_id, engine):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = yaml.load(
-        open(f"./questionnaire/{survey_id}/questions.yaml"), Loader=yaml.FullLoader
-    )
+    data = yaml.load(open(f"./questionnaire/{survey_id}/questions.yaml"), Loader=yaml.FullLoader)
 
     # ----------------------------------------------------------------------
     # Check if survey exist, or create it
@@ -50,15 +47,11 @@ def load_question(survey_id, engine):
     for section in data:
         for question_data in section["questions"]:
             if "id" not in question_data.keys():
-                logging.warning(
-                    f"Question SKIPPED : missing ID : {question_data['title']}"
-                )
+                logging.warning(f"Question SKIPPED : missing ID : {question_data['title']}")
                 continue
 
             if "type" not in question_data.keys():
-                logging.warning(
-                    f"Question SKIPPED : missing TYPE : {question_data['title']}"
-                )
+                logging.warning(f"Question SKIPPED : missing TYPE : {question_data['title']}")
                 continue
 
             question_data["id"]
@@ -77,14 +70,10 @@ def load_question(survey_id, engine):
                 logging.info(f"Question ADDED {question.id}")
 
             survey_question = (
-                session.query(SurveyQuestions)
-                .filter_by(survey_id=survey.id, question_id=question.id)
-                .first()
+                session.query(SurveyQuestions).filter_by(survey_id=survey.id, question_id=question.id).first()
             )
             if not survey_question:
-                survey_question = SurveyQuestions(
-                    survey_id=survey.id, question_id=question.id, text=question.desc
-                )
+                survey_question = SurveyQuestions(survey_id=survey.id, question_id=question.id, text=question.desc)
                 session.add(survey_question)
                 logging.info(f"SurveyQuestions ADDED {survey.id}::{question.id}")
 
@@ -121,24 +110,15 @@ def load_question(survey_id, engine):
                 for grid_question_data in question_data["responses"]:
 
                     if not isinstance(grid_question_data, dict):
-                        logging.warning(
-                            f"Grid question SKIPPED : not a dict ({grid_question_data})"
-                        )
+                        logging.warning(f"Grid question SKIPPED : not a dict ({grid_question_data})")
                         continue
 
                     if "id" not in grid_question_data.keys():
-                        logging.warning(
-                            f"Grid question SKIPPED : id is missing ({grid_question})"
-                        )
+                        logging.warning(f"Grid question SKIPPED : id is missing ({grid_question})")
                         continue
 
-                    if (
-                        "text" not in grid_question_data.keys()
-                        or grid_question_data["text"] == None
-                    ):
-                        logging.warning(
-                            f"Grid question SKIPPED : text is missing ({grid_question_data})"
-                        )
+                    if "text" not in grid_question_data.keys() or grid_question_data["text"] == None:
+                        logging.warning(f"Grid question SKIPPED : text is missing ({grid_question_data})")
                         continue
 
                     grid_question_id = f"{question.id}-{grid_question_data['id']}"
@@ -166,18 +146,14 @@ def load_question(survey_id, engine):
                             parent_id=survey_question.id,
                         )
                         session.add(grid_survey_question)
-                        logging.info(
-                            f"Grid Survey Question ADDED {survey.id}::{grid_question.id}"
-                        )
+                        logging.info(f"Grid Survey Question ADDED {survey.id}::{grid_question.id}")
 
                     for c in grid_choices:
                         if c not in grid_survey_question.choices:
                             grid_survey_question.choices.append(c)
 
             elif question_data["id"] != "feedback":
-                logging.warning(
-                    f"Question SKIPPED : wrong TYPE : {question_data['title']}"
-                )
+                logging.warning(f"Question SKIPPED : wrong TYPE : {question_data['title']}")
                 continue
 
     session.commit()
@@ -208,15 +184,9 @@ def load_responses(survey_id, engine):
 
     for question_id in questions_list:
 
-        survey_question = (
-            session.query(SurveyQuestions)
-            .filter_by(survey_id=survey.id, question_id=question_id)
-            .first()
-        )
+        survey_question = session.query(SurveyQuestions).filter_by(survey_id=survey.id, question_id=question_id).first()
         if not survey_question:
-            logging.error(
-                f"ERROR, Unable to find the survey_question for {survey.id} / {question_id}"
-            )
+            logging.error(f"ERROR, Unable to find the survey_question for {survey.id} / {question_id}")
             exit(1)
 
         responses = list(df[question_id])
@@ -261,9 +231,7 @@ def load_responses(survey_id, engine):
                         surveyresponse_id=sr.id,
                         choice_id=choice.id,
                     )
-                    logging.debug(
-                        f"QuestionResponses ADDED {survey_question.id} - {sr.id} - {choice}"
-                    )
+                    logging.debug(f"QuestionResponses ADDED {survey_question.id} - {sr.id} - {choice}")
                     session.add(qr)
 
     logging.info("Saving the responses in the database ... ")
