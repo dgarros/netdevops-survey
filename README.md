@@ -11,19 +11,11 @@ Everyone is welcome to participate in the definition of the questionnaire and th
 Questions and feedback can be provided via Github issue or via the NetworkToCode Slack channel. 
 You can sign up and join the Slack community here: http://slack.networktocode.com/
 
-# 2020 Survey open!
-Please take a few minutes and participate in the [2020 Edition](http://bit.ly/netdevops-survey-2020)
-
 # Past Reports
 
-- [2016](https://dgarros.github.io/netdevops-survey/reports/2016)
+- [2020](https://dgarros.github.io/netdevops-survey/reports/2020)
 - [2019](https://dgarros.github.io/netdevops-survey/reports/2019)
-
-## 2020 Timing
-* September 1st to September 30th : Definition of the questionnaire (github)
-* Oct 1st to October 30th : Survey open for response
-* October 31st to November 30th : Results cleanup
-* December 3rd : Results publication
+- [2016](https://dgarros.github.io/netdevops-survey/reports/2016)
 
 ## Core Team
 * Francois Caen
@@ -31,10 +23,11 @@ Please take a few minutes and participate in the [2020 Edition](http://bit.ly/ne
 
 # Previous Editions
 
-Previous editions of the netdevops survey took place in Fall 2016 and 2019.
+Previous editions of the netdevops survey took place in Fall 2016, 2019 & 2020.
 * The raw results are available in the results folder in TSV format or in a SQLite database 
 
-## Core Team
+## Main Contributors
+- Francois Caen
 - Jason Frazier
 - David Barroso
 - Pete Lumbis
