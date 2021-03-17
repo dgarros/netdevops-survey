@@ -138,11 +138,6 @@ def analyze_tsv(survey, question):
     pd.set_option("display.width", None)
     pd.set_option("display.max_colwidth", None)
 
-    # df.set_option('display.max_rows', None)
-    # df.set_option('display.max_columns', None)
-    # df.set_option('display.width', None)
-    # df.set_option('display.max_colwidth', -1)
-
     print(df.sort_values(by=list(responses.keys())[0], ascending=False))
 
 

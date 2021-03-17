@@ -18,6 +18,7 @@ import logging
 import pygal
 from pygal.style import CleanStyle, Style, LightenStyle
 
+from .schema import *
 from .query import *
 
 GREEN = "#38761D"
