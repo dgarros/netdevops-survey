@@ -193,7 +193,7 @@
     - No - the configurations of our network devices is our only accurate source of information
 
   - title: Source of Truth – If you have a Source of Truth where are you storing your data ?
-    type: Multi choice
+    type: Multiple choice
     id: sot-where
     responses:
     - Spreadsheet
@@ -333,7 +333,7 @@
     - no prefered approach / varies on case by case
 
   - title: What business or cultural issues prevent your organization from automating more aspects of the network?
-    type: Multi choice
+    type: Multiple choice
     id: culture-blocker
     responses:
     - Time
