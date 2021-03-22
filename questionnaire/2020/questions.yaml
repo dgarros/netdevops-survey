@@ -2,12 +2,9 @@
 
 ---
 # ------------------------------------------------------------------------------
-# WORK IN PROGRESS until Oct 2020
 # - Please open an issue on Github or join the conversation on Slack if you would 
-# like to propose a change in the list of questions
-# 
-# - Please open a Pull Request directly on Github if you would like to add a response
-# in an existing question
+# like to propose a change in the questionnaire for future editions of the survey
+
 # ------------------------------------------------------------------------------
 - section: OPERATION/MANAGEMENT OF YOUR NETWORK
   questions:
